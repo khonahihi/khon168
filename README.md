@@ -1,7 +1,7 @@
  <div align="center">
 # 👑 Khon
 **Xin chào mình là Khon** Đây là phiên bản clone lại dựa trên module của **NightmarketServer** và **Đinh Duy Vinh**.
-Dự án giữ lại cấu trúc nền tảng của module gốc.
+Dự án giữ lại cấu trúc của module gốc.
   
 ## 🚀 Cài đặt
 ### Bước 1: Chuẩn bị
@@ -30,7 +30,7 @@ https://raw.githubusercontent.com/khonahihi/khon168/main/locket.module
 - Module sẽ có tạo nhóm,caption trending, vote, up ảnh + quay video 30s + âm thanh,... Tính năng filter AI hiện chưa sử dụng được.
 ---
 ## 💛 Credits
-Xin gửi lời cảm ơn đến những người đã đóng góp cho mã nguồn nền tảng:
+Xin gửi lời cảm ơn đến những người đã đóng góp cho mã nguồn:
 - **NightmarketServer** – Original Module & Scripts.
 - **Duy Vinh** – Contributions & Customizations.
 [github.com/khonahihi/khon168](https://github.com/khonahihi/khon168)
