@@ -36,6 +36,5 @@ Xin gửi lời cảm ơn đến những người đã đóng góp cho mã ngu�
 [github.com/khonahihi/khon168](https://github.com/khonahihi/khon168)
 ---
 <div align="center">
-### 💖 Made with Love by Khon
-*Little Captions, Big Feelings ✨*
+### 💖 Singed by Khon
 </div>
