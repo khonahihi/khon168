@@ -3,7 +3,7 @@
  * Replace BACKEND_URL before enabling. Not a verified live Locket API adapter.
  */
 (function () {
-  var BACKEND_URL = 'https://YOUR-BACKEND-DOMAIN.example.com';
+  var BACKEND_URL = 'https://khon-photobooth.onrender.com';
   var STATE_KEY = 'khon168.pb.active.v1';
   var ALIASES = {
     photobooth_4cut: 1, frame_classic_pb: 1, pb_vintage: 1,
