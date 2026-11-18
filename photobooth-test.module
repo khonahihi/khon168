@@ -1,9 +1,0 @@
-
-#!name=KHON Photobooth TEST
-#!desc=KHON Photobooth Request Debug v1
-
-[Script]
-khon_pb_debug = type=http-request, pattern=^https:\/\/(us-central1-locket-4252a\.cloudfunctions\.net|api\.locketcamera\.com)\/generateFilteredImage(?:\?.*)?$, script-path=https://raw.githubusercontent.com/khonahihi/khon168/main/js/photobooth-debug.js, requires-body=false, timeout=30
-
-[MITM]
-hostname = %APPEND% api.locketcamera.com, us-central1-locket-4252a.cloudfunctions.net
