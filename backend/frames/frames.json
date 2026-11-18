@@ -1,0 +1,54 @@
+{
+  "classic": {
+    "title": "Classic 4-cut",
+    "width": 650,
+    "height": 1980,
+    "overlay": "overlays/classic.png",
+    "slots": [
+      {"left": 50, "top": 90, "width": 550, "height": 408},
+      {"left": 50, "top": 533, "width": 550, "height": 408},
+      {"left": 50, "top": 976, "width": 550, "height": 408},
+      {"left": 50, "top": 1419, "width": 550, "height": 408}
+    ],
+    "aliases": ["photobooth_4cut", "frame_classic_pb", "pb_vintage"]
+  },
+  "cute": {
+    "title": "Cute 2x2",
+    "width": 1000,
+    "height": 1210,
+    "overlay": "overlays/cute.png",
+    "slots": [
+      {"left": 55, "top": 142, "width": 428, "height": 415},
+      {"left": 517, "top": 142, "width": 428, "height": 415},
+      {"left": 55, "top": 590, "width": 428, "height": 415},
+      {"left": 517, "top": 590, "width": 428, "height": 415}
+    ],
+    "aliases": ["photobooth_cute", "pb_strawberry", "frame_berry_days", "frame_happy_snap"]
+  },
+  "holo": {
+    "title": "Holographic 2x2",
+    "width": 1000,
+    "height": 1210,
+    "overlay": "overlays/holo.png",
+    "slots": [
+      {"left": 55, "top": 142, "width": 428, "height": 415},
+      {"left": 517, "top": 142, "width": 428, "height": 415},
+      {"left": 55, "top": 590, "width": 428, "height": 415},
+      {"left": 517, "top": 590, "width": 428, "height": 415}
+    ],
+    "aliases": ["pb_holo_4cut", "pb_galaxy", "pb_denim_ripped_2x2"]
+  },
+  "school": {
+    "title": "Back to School 2x2 (sample preset)",
+    "width": 1000,
+    "height": 1210,
+    "overlay": "overlays/school.png",
+    "slots": [
+      {"left": 55, "top": 142, "width": 428, "height": 415},
+      {"left": 517, "top": 142, "width": 428, "height": 415},
+      {"left": 55, "top": 590, "width": 428, "height": 415},
+      {"left": 517, "top": 590, "width": 428, "height": 415}
+    ],
+    "aliases": ["back_to_school", "frame_sky_diary", "pb_scrapbook_ripped_4cut", "pb_ripped_paper_4cut"]
+  }
+}
