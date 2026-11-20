@@ -1,0 +1,64 @@
+
+#!name=KHON168 - Photobooth Test
+#!desc=KHON168 Custom Captions & Photobooth Experimental
+# Author: KHON168
+# Repository: https://github.com/khonahihi/khon168
+# Branch: feature/khon168-photobooth
+
+[General]
+user-agent = Locket/1.0.0 (iPhone; iOS 26.3; Scale/3.00)
+
+[Script]
+
+# ============================================================
+# KHON168 - RevenueCat
+# ============================================================
+
+revenuecat = type=http-response, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$), script-path=https://raw.githubusercontent.com/khonahihi/khon168/feature/khon168-photobooth/js/locketfix.js, requires-body=true, max-size=-1, timeout=60
+
+deleteHeader = type=http-request, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts|subscribers), script-path=https://raw.githubusercontent.com/khonahihi/khon168/feature/khon168-photobooth/js/header.js, timeout=60
+
+
+# ============================================================
+# KHON168 - Firebase Remote Config
+# Custom Captions, Gradient, Filter Metadata
+# ============================================================
+
+locket_rc = type=http-response, pattern=^https:\/\/firebaseremoteconfig\.googleapis\.com\/v1\/projects\/locket-4252a\/.+, script-path=https://raw.githubusercontent.com/khonahihi/khon168/feature/khon168-photobooth/js/forceGold.js, requires-body=true, max-size=-1, timeout=60
+
+
+# ============================================================
+# KHON168 - PHOTOBOOTH EXPERIMENTAL
+# ============================================================
+
+# Backend: KHON168 Photobooth on Render
+#
+# API:
+# GET  /health
+# GET  /api/photobooth/config
+# GET  /api/photobooth/frames
+# POST /api/photobooth/compose
+#
+# Backend ho tro ghep 1, 2 va 4 anh.
+#
+# Photobooth truc tiep trong Locket chua duoc xac minh.
+# Khong bat chuyen huong Cloud Functions khi chua biet
+# chinh xac request/response ma Locket su dung.
+#
+# Hook du kien sau khi tao photobooth-bridge.js:
+#
+# photobooth_bridge = type=http-request, pattern=^https:\/\/us-central1-locket-4252a\.cloudfunctions\.net\/generateFilteredImage(?:\?.*)?$, script-path=https://raw.githubusercontent.com/khonahihi/khon168/feature/khon168-photobooth/js/photobooth-bridge.js, requires-body=true, timeout=60
+#
+# KHONG BO DAU # CHO DEN KHI BRIDGE DA HOAT DONG.
+#
+# Khong chuyen huong postMomentV2.
+# Khong chuyen huong toan bo cloudfunctions.net.
+# Khong su dung DNS hoac VPS cua Phong.
+
+
+# ============================================================
+# MITM
+# ============================================================
+
+[MITM]
+hostname = %APPEND%, api.revenuecat.com, firebaseremoteconfig.googleapis.com
