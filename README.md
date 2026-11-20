@@ -1,40 +1,31 @@
- <div align="center">
-# 👑 Khon
-**Xin chào mình là Khon** Đây là phiên bản clone lại dựa trên module của **NightmarketServer** và **Đinh Duy Vinh**.
-Dự án giữ lại cấu trúc của module gốc.
-  
-## 🚀 Cài đặt
-### Bước 1: Chuẩn bị
-- Thiết bị iPhone sử dụng iOS.
-- Ứng dụng Locket.
-- Ứng dụng Shadowrocket đã được cài đặt và cấu hình phù hợp.
-### Bước 2: Sao chép URL Module
-```text
-https://raw.githubusercontent.com/khonahihi/khon168/main/locket.module
-```
-### Bước 3: Thêm Module và sử dụng
-1. Mở Shadowrocket.
-2. Thêm URL Module.
-3. Sử dụng config.
-4. Giải mã chứng chỉ CA, Cài vào hệ thống và bật tin cậy.
-5. Đăng xuất và xóa locket cũ.
-6. Vào Shadowrocket bật kết nối.
-7. Tải và khởi động lại Locket.
-8. Đăng nhập đợi 1 chút và lên.
+# KHON168 Photobooth
 
-Đây là dự án cá nhân nhằm nghiên cứu, tùy chỉnh và mở rộng nội dung caption trên nền mã nguồn có sẵn.
-- Không phải sản phẩm chính thức của Locket.
-- Không liên kết hoặc được chứng thực bởi Locket, RevenueCat hay Firebase.
-- Khả năng hoạt động phụ thuộc vào phiên bản ứng dụng và cấu hình thiết bị.
-- Việc thay đổi phản hồi phía thiết bị không đồng nghĩa với việc thay đổi quyền truy cập hoặc thuê bao trên máy chủ.
-- Module sẽ có tạo nhóm,caption trending, vote, up ảnh + quay video 30s + âm thanh,... Tính năng filter AI hiện chưa sử dụng được.
----
-## 💛 Credits
-Xin gửi lời cảm ơn đến những người đã đóng góp cho mã nguồn:
-- **NightmarketServer** – Original Module & Scripts.
-- **Duy Vinh** – Contributions & Customizations.
-[github.com/khonahihi/khon168](https://github.com/khonahihi/khon168)
----
-<div align="center">
-💖 Singed by Khon
-</div>
+KHON168 ghép 1, 2 hoặc 4 ảnh với sáu mẫu khung. Trang web cho phép xem trước, chỉnh vị trí cắt từng ảnh và xuất PNG, JPEG hoặc WebP. Một dịch vụ Node.js, Express và Sharp phục vụ cả giao diện lẫn API.
+
+## Chạy trong VS Code
+
+Dùng Node.js 24. Mở thư mục `khon168` bằng **File → Open Folder**, chọn **Terminal → New Terminal** và chạy trên Windows.
+
+```powershell
+npm.cmd install
+npm.cmd run build
+npm.cmd start
+```
+
+Mở [Photobooth](http://localhost:3000) hoặc [health check](http://localhost:3000/health). Trên macOS/Linux, dùng `npm` thay cho `npm.cmd`. Có thể sao chép `.env.example` thành `.env` để đặt cổng và giới hạn ảnh. `npm run dev` tự khởi động lại server khi sửa các tệp JavaScript đã nạp.
+
+## Dùng trên iPhone
+
+Mở địa chỉ HTTPS của dịch vụ trong Safari, chọn số ảnh, chọn khung rồi tải ảnh theo thứ tự ô. Dùng **Chỉnh khung cắt**, **Tạo ảnh** và **Tải ảnh**. Nếu có **Chia sẻ → Lưu hình ảnh**, bạn có thể lưu thẳng vào Ảnh. [Hướng dẫn Photobooth](PHOTObOOTH_GUIDE.md).
+
+## Thêm khung, kiểm thử và triển khai
+
+- Thêm JSON vào `backend/layouts/` và đặt khung SVG hoặc PNG có alpha vào `backend/frames/`. Chạy `npm run build` để kiểm tra và khởi động lại để nạp khung. [Cấu trúc layout](PHOTObOOTH_GUIDE.md#thêm-khung).
+- Chạy `npm test` để kiểm thử tự động. Khi server đang chạy, dùng `npm run test:api -- http://localhost:3000`. [API và lệnh curl](API_REFERENCE.md) · [Kết quả kiểm thử](TEST_REPORT.md).
+- `render.yaml` khai báo một Node Web Service gói Free. Render cấp URL HTTPS và truyền `PORT` cho dịch vụ lắng nghe trên `0.0.0.0`. [Triển khai từ GitHub lên Render](RENDER_DEPLOY.md).
+
+## Module Locket hiện hữu
+
+Module Shadowrocket và các script cũ của Khon dựa trên nguồn của **NightmarketServer** và **Đinh Duy Vinh**. Custom Captions hiện ghi dữ liệu vào Firebase Remote Config trên thiết bị, với cấu hình gradient tĩnh 2 màu trở lên. Việc tích hợp Photobooth vào Locket cần hợp đồng API đã xác minh. Các tệp tham chiếu cung cấp tên endpoint và mã phía client. [Phân tích cấu hình và mức tương thích](FEATURE_MATRIX.md).
+
+Chạy `npm run evidence:locket` để xem phần thông tin còn thiếu. Dùng biểu mẫu để ghi kết quả trên thiết bị khi kiểm thử Photobooth trong Locket. [Kiểm thử Locket trên iPhone](LOCKET_IPHONE_TEST.md).

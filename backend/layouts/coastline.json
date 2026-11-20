@@ -1,0 +1,19 @@
+{
+  "id": "coastline",
+  "name": "Bưu Thiếp Biển",
+  "description": "Retro · Ngang",
+  "photoCount": 2,
+  "canvas": {
+    "width": 1680,
+    "height": 1080
+  },
+  "background": "#FFF1CF",
+  "slotColor": "#AAD1CB",
+  "gap": 50,
+  "order": 2,
+  "overlay": "coastline.svg",
+  "slots": [
+    {"left": 85, "top": 141, "width": 725, "height": 725, "radius": 5, "fit": "cover", "x": 0.5, "y": 0.5},
+    {"left": 870, "top": 141, "width": 725, "height": 725, "radius": 5, "fit": "cover", "x": 0.5, "y": 0.5}
+  ]
+}

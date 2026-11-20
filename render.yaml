@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: khon168-photobooth
+    runtime: node
+    plan: free
+    buildCommand: npm ci --include=optional && npm run build
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: TRUST_PROXY_HOPS
+        value: '1'

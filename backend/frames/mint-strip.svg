@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="2000" viewBox="0 0 800 2000">
+ <g fill="#305644" font-family="sans-serif">
+ <defs><pattern id="perf" width="54" height="74" patternUnits="userSpaceOnUse"><rect x="14" y="14" width="26" height="17" rx="5" fill="#537965"/></pattern></defs>
+ <path d="M13 100h54v1699H13zm720 0h54v1699h-54z" fill="url(#perf)"/>
+ <path d="M90 75h620M90 1835h620" stroke="#537965" stroke-width="3"/>
+ <text x="400" y="1926" text-anchor="middle" font-size="43" letter-spacing="9">KHON168</text>
+ <path d="M215 1949h370" stroke="#537965" stroke-width="3"/>
+ </g>
+</svg>

@@ -1,0 +1,23 @@
+{
+  "name": "khon168-photobooth",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env backend/server.js",
+    "dev": "node --env-file-if-exists=.env --watch backend/server.js",
+    "build": "node scripts/check-build.js",
+    "test": "node --test",
+    "test:api": "node scripts/smoke-api.js",
+    "evidence:locket": "node scripts/check-locket-evidence.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.2.1",
+    "multer": "^2.1.1",
+    "sharp": "^0.35.5"
+  }
+}
