@@ -1,0 +1,2374 @@
+{
+  "sources": [
+    "locketmphong_v95.js",
+    "locketmphong.conf"
+  ],
+  "captionGroups": [
+    {
+      "section": "General",
+      "items": [
+        {
+          "overlay_id": "caption:standard",
+          "source": "local",
+          "sort_order": 0,
+          "caption": {
+            "type": "standard"
+          }
+        },
+        {
+          "overlay_id": "caption:color_palette",
+          "source": "local",
+          "sort_order": 1,
+          "caption": {
+            "type": "color_palette"
+          }
+        },
+        {
+          "overlay_id": "caption:review",
+          "source": "local",
+          "sort_order": 2,
+          "caption": {
+            "type": "review"
+          }
+        },
+        {
+          "overlay_id": "caption:music",
+          "source": "local",
+          "sort_order": 3,
+          "caption": {
+            "type": "music"
+          }
+        },
+        {
+          "overlay_id": "caption:location",
+          "source": "local",
+          "sort_order": 4,
+          "caption": {
+            "type": "location"
+          }
+        },
+        {
+          "overlay_id": "caption:weather",
+          "source": "local",
+          "sort_order": 5,
+          "caption": {
+            "type": "weather"
+          }
+        },
+        {
+          "overlay_id": "caption:time",
+          "source": "local",
+          "sort_order": 6,
+          "caption": {
+            "type": "time"
+          }
+        },
+        {
+          "overlay_id": "caption:streak",
+          "source": "local",
+          "sort_order": 7,
+          "caption": {
+            "type": "streak"
+          }
+        },
+        {
+          "overlay_id": "caption:star_sign",
+          "source": "local",
+          "sort_order": 8,
+          "caption": {
+            "type": "star_sign"
+          }
+        },
+        {
+          "overlay_id": "caption:poll",
+          "source": "local",
+          "caption": {
+            "type": "poll"
+          }
+        }
+      ]
+    },
+    {
+      "section": "Decorative",
+      "items": [
+        {
+          "overlay_id": "caption:party_time",
+          "source": "remote",
+          "sort_order": 9,
+          "caption": {
+            "type": "static_content",
+            "text": "Party Time!",
+            "localized_text": {
+              "en": "Party Time!",
+              "ko": "파티 타임!",
+              "ar": "وقت الحفلة!",
+              "vi": "Quẩy thôi!"
+            },
+            "max_lines": 1,
+            "text_color": "#000000E6",
+            "background": {
+              "colors": [
+                "#5EFFF5",
+                "#FCFF57"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "🪩"
+            }
+          }
+        },
+        {
+          "overlay_id": "caption:locket_count",
+          "source": "local",
+          "sort_order": 10,
+          "caption": {
+            "type": "locket_count"
+          }
+        },
+        {
+          "overlay_id": "caption:good_morning",
+          "source": "remote",
+          "sort_order": 11,
+          "caption": {
+            "type": "static_content",
+            "text": "Good morning",
+            "localized_text": {
+              "en": "Good morning",
+              "ko": "좋은 아침",
+              "ar": "صباح الخير",
+              "vi": "Chào ngày mới nè"
+            },
+            "max_lines": 1,
+            "text_color": "#FFFFFFE5",
+            "background": {
+              "colors": [
+                "#EF7402",
+                "#EABF0F"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "☀️"
+            }
+          }
+        },
+        {
+          "overlay_id": "caption:goodnight",
+          "source": "remote",
+          "sort_order": 12,
+          "caption": {
+            "type": "static_content",
+            "text": "Goodnight",
+            "localized_text": {
+              "en": "Goodnight",
+              "ko": "잘 자",
+              "ar": "مساء الخير",
+              "vi": "Ngủ ngon"
+            },
+            "max_lines": 1,
+            "text_color": "#FFFFFFE6",
+            "background": {
+              "colors": [
+                "#370C6F",
+                "#575CD4"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "🌙"
+            }
+          }
+        },
+        {
+          "overlay_id": "caption:ootd",
+          "source": "remote",
+          "sort_order": 13,
+          "caption": {
+            "type": "static_content",
+            "text": "OOTD",
+            "max_lines": 1,
+            "text_color": "#101010E6",
+            "background": {
+              "colors": [
+                "#FFFFFF",
+                "#DBDBDB"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "🕶"
+            }
+          }
+        },
+        {
+          "overlay_id": "caption:miss_you",
+          "source": "remote",
+          "sort_order": 14,
+          "caption": {
+            "type": "static_content",
+            "text": "Miss you",
+            "localized_text": {
+              "en": "Miss you",
+              "ko": "보고 싶어",
+              "ar": "أشتاق إليك",
+              "vi": "Nhớ quá trờiii"
+            },
+            "max_lines": 1,
+            "text_color": "#FFFFFFDB",
+            "background": {
+              "colors": [
+                "#EC0C00",
+                "#FF493F"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "🥰"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "section": "In Love 💘",
+      "items": [
+        {
+          "overlay_id": "caption:custom_cc16499460",
+          "source": "remote",
+          "caption": {
+            "type": "static_content",
+            "text": "Dỗi rồi",
+            "max_lines": 1,
+            "text_color": "#FFFFFF",
+            "background": {
+              "colors": [
+                "#FF5F6D",
+                "#FFC371"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "😤"
+            }
+          }
+        },
+        {
+          "overlay_id": "caption:custom_0c2c053f7b",
+          "source": "remote",
+          "caption": {
+            "type": "static_content",
+            "text": "Đang bận tương tư",
+            "max_lines": 1,
+            "text_color": "#FFFFFF",
+            "background": {
+              "colors": [
+                "#1A2980",
+                "#26D0CE"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "💭"
+            }
+          }
+        },
+        {
+          "overlay_id": "caption:custom_4b12d7cf0d",
+          "source": "remote",
+          "caption": {
+            "type": "static_content",
+            "text": "Rep tin nhắn đi",
+            "max_lines": 1,
+            "text_color": "#FFFFFF",
+            "background": {
+              "colors": [
+                "#F00000",
+                "#DC281E"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "📩"
+            }
+          }
+        },
+        {
+          "overlay_id": "caption:custom_951e630efa",
+          "source": "remote",
+          "caption": {
+            "type": "static_content",
+            "text": "Mỏ hỗn nhưng tâm hiền",
+            "max_lines": 1,
+            "text_color": "#FFFFFF",
+            "background": {
+              "colors": [
+                "#FFB75E",
+                "#ED8F03"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "🐤"
+            }
+          }
+        },
+        {
+          "overlay_id": "caption:custom_e1a5699b6d",
+          "source": "remote",
+          "caption": {
+            "type": "static_content",
+            "text": "Muốn được ôm",
+            "max_lines": 1,
+            "text_color": "#FFFFFF",
+            "background": {
+              "colors": [
+                "#FF9A9E",
+                "#FECFEF"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "🫂"
+            }
+          }
+        },
+        {
+          "overlay_id": "caption:custom_f773f2840a",
+          "source": "remote",
+          "caption": {
+            "type": "static_content",
+            "text": "Hơi bị nhớ",
+            "max_lines": 1,
+            "text_color": "#FFFFFF",
+            "background": {
+              "colors": [
+                "#A18CD1",
+                "#FBC2EB"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "🤏"
+            }
+          }
+        },
+        {
+          "overlay_id": "caption:custom_62c051687a",
+          "source": "remote",
+          "caption": {
+            "type": "static_content",
+            "text": "Đang ghen",
+            "max_lines": 1,
+            "text_color": "#FFFFFF",
+            "background": {
+              "colors": [
+                "#F00000",
+                "#DC281E"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "🔥"
+            }
+          }
+        },
+        {
+          "overlay_id": "caption:custom_60f4819aa3",
+          "source": "remote",
+          "caption": {
+            "type": "static_content",
+            "text": "Ngủ ngon giấc mơ có em",
+            "max_lines": 1,
+            "text_color": "#FFFFFF",
+            "background": {
+              "colors": [
+                "#30CFD0",
+                "#330867"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "🌌"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "section": "Gen Z Life 🩻",
+      "items": [
+        {
+          "overlay_id": "caption:custom_fab3659cda",
+          "source": "remote",
+          "caption": {
+            "type": "static_content",
+            "text": "Hảo hán",
+            "max_lines": 1,
+            "text_color": "#FFFFFF",
+            "background": {
+              "colors": [
+                "#114357",
+                "#F29492"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "🗡️"
+            }
+          }
+        },
+        {
+          "overlay_id": "caption:custom_7f71e05b11",
+          "source": "remote",
+          "caption": {
+            "type": "static_content",
+            "text": "Cảm lạnh",
+            "max_lines": 1,
+            "text_color": "#FFFFFF",
+            "background": {
+              "colors": [
+                "#2193B0",
+                "#6DD5ED"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "🤧"
+            }
+          }
+        },
+        {
+          "overlay_id": "caption:custom_f394b3716b",
+          "source": "remote",
+          "caption": {
+            "type": "static_content",
+            "text": "Bất lực",
+            "max_lines": 1,
+            "text_color": "#FFFFFF",
+            "background": {
+              "colors": [
+                "#2C3E50",
+                "#3498DB"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "🏳️"
+            }
+          }
+        },
+        {
+          "overlay_id": "caption:custom_70a0949a08",
+          "source": "remote",
+          "caption": {
+            "type": "static_content",
+            "text": "Xin lũi được chưa",
+            "max_lines": 1,
+            "text_color": "#000000",
+            "background": {
+              "colors": [
+                "#F6D365",
+                "#FDA085"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "🥺"
+            }
+          }
+        },
+        {
+          "overlay_id": "caption:custom_4de4ca79f9",
+          "source": "remote",
+          "caption": {
+            "type": "static_content",
+            "text": "Rớt nước mắt",
+            "max_lines": 1,
+            "text_color": "#FFFFFF",
+            "background": {
+              "colors": [
+                "#1CB5E0",
+                "#000046"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "😭"
+            }
+          }
+        },
+        {
+          "overlay_id": "caption:custom_f2008af6c2",
+          "source": "remote",
+          "caption": {
+            "type": "static_content",
+            "text": "Gục ngã",
+            "max_lines": 1,
+            "text_color": "#FFFFFF",
+            "background": {
+              "colors": [
+                "#3A1C71",
+                "#D76D77"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "📉"
+            }
+          }
+        },
+        {
+          "overlay_id": "caption:custom_f77dea69c2",
+          "source": "remote",
+          "caption": {
+            "type": "static_content",
+            "text": "Tiền đình",
+            "max_lines": 1,
+            "text_color": "#FFFFFF",
+            "background": {
+              "colors": [
+                "#C33764",
+                "#1D2671"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "🌪️"
+            }
+          }
+        },
+        {
+          "overlay_id": "caption:custom_63054ce594",
+          "source": "remote",
+          "caption": {
+            "type": "static_content",
+            "text": "Chê mạnh",
+            "max_lines": 1,
+            "text_color": "#FFFFFF",
+            "background": {
+              "colors": [
+                "#FF4E50",
+                "#F9D423"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "👎"
+            }
+          }
+        },
+        {
+          "overlay_id": "caption:custom_264c6308de",
+          "source": "remote",
+          "caption": {
+            "type": "static_content",
+            "text": "Xinh gái ấn phím 1",
+            "max_lines": 1,
+            "text_color": "#FFFFFF",
+            "background": {
+              "colors": [
+                "#F77062",
+                "#FE5196"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "💅"
+            }
+          }
+        },
+        {
+          "overlay_id": "caption:custom_668d57a03b",
+          "source": "remote",
+          "caption": {
+            "type": "static_content",
+            "text": "Đi làm vì đam mê",
+            "max_lines": 1,
+            "text_color": "#FFFFFF",
+            "background": {
+              "colors": [
+                "#FDC830",
+                "#F37335"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "🤡"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "section": "Wordsmith 📖",
+      "items": [
+        {
+          "overlay_id": "caption:custom_487cf88663",
+          "source": "remote",
+          "caption": {
+            "type": "static_content",
+            "text": "Yeuu Emm",
+            "max_lines": 1,
+            "text_color": "#FFFFFF",
+            "background": {
+              "colors": [
+                "#FF0844",
+                "#FFB199"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "💖"
+            }
+          }
+        },
+        {
+          "overlay_id": "caption:custom_add70cac87",
+          "source": "remote",
+          "caption": {
+            "type": "static_content",
+            "text": "Yeuu Anhh",
+            "max_lines": 1,
+            "text_color": "#FFFFFF",
+            "background": {
+              "colors": [
+                "#00C6FF",
+                "#0072FF"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "💙"
+            }
+          }
+        },
+        {
+          "overlay_id": "caption:custom_17c6eeed84",
+          "source": "remote",
+          "caption": {
+            "type": "static_content",
+            "text": "Hồi chiều trời mưa",
+            "max_lines": 1,
+            "text_color": "#FFFFFF",
+            "background": {
+              "colors": [
+                "#5C258D",
+                "#4389A2"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "🌧️"
+            }
+          }
+        },
+        {
+          "overlay_id": "caption:custom_b6988cdd7f",
+          "source": "remote",
+          "caption": {
+            "type": "static_content",
+            "text": "côn viên lá làn",
+            "max_lines": 1,
+            "text_color": "#FFFFFF",
+            "background": {
+              "colors": [
+                "#12C2E9",
+                "#F64F59"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "🍂"
+            }
+          }
+        },
+        {
+          "overlay_id": "caption:custom_7d022aa0bf",
+          "source": "remote",
+          "caption": {
+            "type": "static_content",
+            "text": "aiiii hoiiii ?",
+            "max_lines": 1,
+            "text_color": "#FFFFFF",
+            "background": {
+              "colors": [
+                "#FA709A",
+                "#FEE140"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "🐽"
+            }
+          }
+        },
+        {
+          "overlay_id": "caption:custom_8f11a5de35",
+          "source": "remote",
+          "caption": {
+            "type": "static_content",
+            "text": "Tai ông để ngoài đầu à",
+            "max_lines": 1,
+            "text_color": "#FFFFFF",
+            "background": {
+              "colors": [
+                "#F953C6",
+                "#B91D73"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "👂"
+            }
+          }
+        },
+        {
+          "overlay_id": "caption:custom_f8ef7d244f",
+          "source": "remote",
+          "caption": {
+            "type": "static_content",
+            "text": "Chan bố mày đi",
+            "max_lines": 1,
+            "text_color": "#FFFFFF",
+            "background": {
+              "colors": [
+                "#870000",
+                "#190A05"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "🙄"
+            }
+          }
+        },
+        {
+          "overlay_id": "caption:custom_7d076d45ab",
+          "source": "remote",
+          "caption": {
+            "type": "static_content",
+            "text": "oách xà lách",
+            "max_lines": 1,
+            "text_color": "#FFFFFF",
+            "background": {
+              "colors": [
+                "#11998E",
+                "#38EF7D"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "🥬"
+            }
+          }
+        },
+        {
+          "overlay_id": "caption:custom_a187eaa34b",
+          "source": "remote",
+          "caption": {
+            "type": "static_content",
+            "text": "è hé",
+            "max_lines": 1,
+            "text_color": "#000000",
+            "background": {
+              "colors": [
+                "#FFE000",
+                "#799F0C"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "🤭"
+            }
+          }
+        },
+        {
+          "overlay_id": "caption:custom_f417e9be88",
+          "source": "remote",
+          "caption": {
+            "type": "static_content",
+            "text": "Ủa alo",
+            "max_lines": 1,
+            "text_color": "#FFFFFF",
+            "background": {
+              "colors": [
+                "#8E2DE2",
+                "#4A00E0"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "📞"
+            }
+          }
+        },
+        {
+          "overlay_id": "caption:custom_5c0e763165",
+          "source": "remote",
+          "caption": {
+            "type": "static_content",
+            "text": "Máy chủ lá đu đủ",
+            "max_lines": 1,
+            "text_color": "#FFFFFF",
+            "background": {
+              "colors": [
+                "#0BA360",
+                "#3CBA92"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "🍃"
+            }
+          }
+        },
+        {
+          "overlay_id": "caption:custom_5d2e9e045a",
+          "source": "remote",
+          "caption": {
+            "type": "static_content",
+            "text": "lạnh thấy mẹ",
+            "max_lines": 1,
+            "text_color": "#000000",
+            "background": {
+              "colors": [
+                "#E0EAFC",
+                "#CFDEF3"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "🥶"
+            }
+          }
+        },
+        {
+          "overlay_id": "caption:custom_d22817a674",
+          "source": "remote",
+          "caption": {
+            "type": "static_content",
+            "text": "Đấy Là Cái Việc",
+            "max_lines": 1,
+            "text_color": "#FFFFFF",
+            "background": {
+              "colors": [
+                "#FF512F",
+                "#F09819"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "🤷‍♂️"
+            }
+          }
+        },
+        {
+          "overlay_id": "caption:custom_a7c2d55bd8",
+          "source": "remote",
+          "caption": {
+            "type": "static_content",
+            "text": "Đẹp trai ấn phím 2",
+            "max_lines": 1,
+            "text_color": "#FFFFFF",
+            "background": {
+              "colors": [
+                "#F7B733",
+                "#FC4A1A"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "📱"
+            }
+          }
+        },
+        {
+          "overlay_id": "caption:custom_e26c9ea2c1",
+          "source": "remote",
+          "caption": {
+            "type": "static_content",
+            "text": "Nho anh ch?",
+            "max_lines": 1,
+            "text_color": "#FFFFFF",
+            "background": {
+              "colors": [
+                "#FF758C",
+                "#FF7EB3"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "🥺"
+            }
+          }
+        },
+        {
+          "overlay_id": "caption:custom_7dc5c44f90",
+          "source": "remote",
+          "caption": {
+            "type": "static_content",
+            "text": "Biển ơi húuuuuuu",
+            "max_lines": 1,
+            "text_color": "#FFFFFF",
+            "background": {
+              "colors": [
+                "#0052D4",
+                "#6FB1FC"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "🌊"
+            }
+          }
+        },
+        {
+          "overlay_id": "caption:custom_f3380ba831",
+          "source": "remote",
+          "caption": {
+            "type": "static_content",
+            "text": "Yêu Mẹ",
+            "max_lines": 1,
+            "text_color": "#FFFFFF",
+            "background": {
+              "colors": [
+                "#D31027",
+                "#EA384D"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "❤️"
+            }
+          }
+        },
+        {
+          "overlay_id": "caption:custom_4cf0a5bae9",
+          "source": "remote",
+          "caption": {
+            "type": "static_content",
+            "text": "nhớ ngy",
+            "max_lines": 1,
+            "text_color": "#FFFFFF",
+            "background": {
+              "colors": [
+                "#FF007F",
+                "#FF5E62"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "💔"
+            }
+          }
+        },
+        {
+          "overlay_id": "caption:custom_3a53349fa3",
+          "source": "remote",
+          "caption": {
+            "type": "static_content",
+            "text": "Oằn tà là vằn",
+            "max_lines": 1,
+            "text_color": "#FFFFFF",
+            "background": {
+              "colors": [
+                "#FF00CC",
+                "#333399"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "🌀"
+            }
+          }
+        },
+        {
+          "overlay_id": "caption:custom_3604896dfc",
+          "source": "remote",
+          "caption": {
+            "type": "static_content",
+            "text": "Khả Năng Cao",
+            "max_lines": 1,
+            "text_color": "#000000",
+            "background": {
+              "colors": [
+                "#757F9A",
+                "#D7DDE8"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "🤔"
+            }
+          }
+        },
+        {
+          "overlay_id": "caption:custom_f44e1100d0",
+          "source": "remote",
+          "caption": {
+            "type": "static_content",
+            "text": "ơ quá kiêu",
+            "max_lines": 1,
+            "text_color": "#FFFFFF",
+            "background": {
+              "colors": [
+                "#FF9966",
+                "#FF5E62"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "💅"
+            }
+          }
+        },
+        {
+          "overlay_id": "caption:custom_fb9b37dee6",
+          "source": "remote",
+          "caption": {
+            "type": "static_content",
+            "text": "lạnh nhớ ai",
+            "max_lines": 1,
+            "text_color": "#FFFFFF",
+            "background": {
+              "colors": [
+                "#89F7FE",
+                "#66A6FF"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "❄️"
+            }
+          }
+        },
+        {
+          "overlay_id": "caption:custom_9fc6436dfa",
+          "source": "remote",
+          "caption": {
+            "type": "static_content",
+            "text": "Đừng nhăng nhít",
+            "max_lines": 1,
+            "text_color": "#FFFFFF",
+            "background": {
+              "colors": [
+                "#CB2D3E",
+                "#EF473A"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "🙅‍♂️"
+            }
+          }
+        },
+        {
+          "overlay_id": "caption:custom_88b3b44fed",
+          "source": "remote",
+          "caption": {
+            "type": "static_content",
+            "text": "hôm nay tôi buồn",
+            "max_lines": 1,
+            "text_color": "#FFFFFF",
+            "background": {
+              "colors": [
+                "#141E30",
+                "#243B55"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "🥀"
+            }
+          }
+        },
+        {
+          "overlay_id": "caption:custom_bf5ddfa49e",
+          "source": "remote",
+          "caption": {
+            "type": "static_content",
+            "text": "gặp nhau cái nhỉ",
+            "max_lines": 1,
+            "text_color": "#FFFFFF",
+            "background": {
+              "colors": [
+                "#F09819",
+                "#EDDE5D"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "🍻"
+            }
+          }
+        },
+        {
+          "overlay_id": "caption:custom_27944097de",
+          "source": "remote",
+          "caption": {
+            "type": "static_content",
+            "text": "ank iu eim",
+            "max_lines": 1,
+            "text_color": "#FFFFFF",
+            "background": {
+              "colors": [
+                "#F53844",
+                "#42378F"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "🥰"
+            }
+          }
+        },
+        {
+          "overlay_id": "caption:custom_769cb1cac2",
+          "source": "remote",
+          "caption": {
+            "type": "static_content",
+            "text": "Mong tôn hoa sen thấy cảnh này",
+            "max_lines": 1,
+            "text_color": "#FFFFFF",
+            "background": {
+              "colors": [
+                "#FDB99B",
+                "#CF8BF3"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "🪷"
+            }
+          }
+        },
+        {
+          "overlay_id": "caption:custom_b4f4222ef1",
+          "source": "remote",
+          "caption": {
+            "type": "static_content",
+            "text": "đấm nhau không",
+            "max_lines": 1,
+            "text_color": "#FFFFFF",
+            "background": {
+              "colors": [
+                "#FF416C",
+                "#FF4B2B"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "🥊"
+            }
+          }
+        },
+        {
+          "overlay_id": "caption:custom_24a46194f1",
+          "source": "remote",
+          "caption": {
+            "type": "static_content",
+            "text": "siêu cấp bá khí",
+            "max_lines": 1,
+            "text_color": "#FFFFFF",
+            "background": {
+              "colors": [
+                "#F857A6",
+                "#FF5858"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "🐉"
+            }
+          }
+        },
+        {
+          "overlay_id": "caption:custom_7ad8654803",
+          "source": "remote",
+          "caption": {
+            "type": "static_content",
+            "text": "dự án ma",
+            "max_lines": 1,
+            "text_color": "#FFFFFF",
+            "background": {
+              "colors": [
+                "#0F2027",
+                "#203A43"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "👻"
+            }
+          }
+        },
+        {
+          "overlay_id": "caption:custom_06e30fd3ca",
+          "source": "remote",
+          "caption": {
+            "type": "static_content",
+            "text": "đọc số tài khoản",
+            "max_lines": 1,
+            "text_color": "#FFFFFF",
+            "background": {
+              "colors": [
+                "#00B4DB",
+                "#0083B0"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "💳"
+            }
+          }
+        },
+        {
+          "overlay_id": "caption:custom_23a588a583",
+          "source": "remote",
+          "caption": {
+            "type": "static_content",
+            "text": "ai sợ thì đi về",
+            "max_lines": 1,
+            "text_color": "#FFFFFF",
+            "background": {
+              "colors": [
+                "#000000",
+                "#E52D27"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "🚶‍♂️"
+            }
+          }
+        },
+        {
+          "overlay_id": "caption:custom_1c64ae4c7a",
+          "source": "remote",
+          "caption": {
+            "type": "static_content",
+            "text": "còn cái nịt",
+            "max_lines": 1,
+            "text_color": "#FFFFFF",
+            "background": {
+              "colors": [
+                "#3E5151",
+                "#DECBA4"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "🧶"
+            }
+          }
+        },
+        {
+          "overlay_id": "caption:custom_760d1e399b",
+          "source": "remote",
+          "caption": {
+            "type": "static_content",
+            "text": "cảnh báo có hát",
+            "max_lines": 1,
+            "text_color": "#FFFFFF",
+            "background": {
+              "colors": [
+                "#DA22FF",
+                "#9733EE"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "🎤"
+            }
+          }
+        },
+        {
+          "overlay_id": "caption:custom_33f93465f1",
+          "source": "remote",
+          "caption": {
+            "type": "static_content",
+            "text": "Thân chưa mà dỡn",
+            "max_lines": 1,
+            "text_color": "#FFFFFF",
+            "background": {
+              "colors": [
+                "#16222A",
+                "#3A6073"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "😒"
+            }
+          }
+        },
+        {
+          "overlay_id": "caption:custom_cca1071571",
+          "source": "remote",
+          "caption": {
+            "type": "static_content",
+            "text": "Ai mượn?",
+            "max_lines": 1,
+            "text_color": "#FFFFFF",
+            "background": {
+              "colors": [
+                "#FF512F",
+                "#DD2476"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "🤨"
+            }
+          }
+        },
+        {
+          "overlay_id": "caption:custom_41810cbfa3",
+          "source": "remote",
+          "caption": {
+            "type": "static_content",
+            "text": "Hay ra dẻ quá à!",
+            "max_lines": 1,
+            "text_color": "#000000",
+            "background": {
+              "colors": [
+                "#4CA1AF",
+                "#C4E0E5"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "🙄"
+            }
+          }
+        },
+        {
+          "overlay_id": "caption:custom_f5f6a3338f",
+          "source": "remote",
+          "caption": {
+            "type": "static_content",
+            "text": "Giảm sức mạnh con tướng này",
+            "max_lines": 1,
+            "text_color": "#FFFFFF",
+            "background": {
+              "colors": [
+                "#00C9FF",
+                "#92FE9D"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "🎮"
+            }
+          }
+        },
+        {
+          "overlay_id": "caption:custom_87faf80c44",
+          "source": "remote",
+          "caption": {
+            "type": "static_content",
+            "text": "Mắc cỡ quá hai ơi",
+            "max_lines": 1,
+            "text_color": "#FFFFFF",
+            "background": {
+              "colors": [
+                "#ED4264",
+                "#FFEDBC"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "🫣"
+            }
+          }
+        },
+        {
+          "overlay_id": "caption:custom_e9101721b5",
+          "source": "remote",
+          "caption": {
+            "type": "static_content",
+            "text": "Mình là lốp",
+            "max_lines": 1,
+            "text_color": "#FFFFFF",
+            "background": {
+              "colors": [
+                "#4B79A1",
+                "#283E51"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "🛞"
+            }
+          }
+        },
+        {
+          "overlay_id": "caption:custom_0b1163646f",
+          "source": "remote",
+          "caption": {
+            "type": "static_content",
+            "text": "Đẹp trai có gì sai",
+            "max_lines": 1,
+            "text_color": "#FFFFFF",
+            "background": {
+              "colors": [
+                "#F12711",
+                "#F5AF19"
+              ]
+            },
+            "icon": {
+              "type": "emoji",
+              "data": "😎"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "stk_tai_tho",
+      "name": "Bờm Tai Thỏ 🐰",
+      "category": "Hiệu Ứng AI 3D Hot 🔥",
+      "type": "normal",
+      "filterType": "normal",
+      "usesOverlay": true,
+      "previewAsset": "stk_tai_tho.png",
+      "iconAsset": "stk_tai_tho.png",
+      "overlayAsset": "stk_tai_tho.png",
+      "captureButtonColors": [
+        "#FFB6C1",
+        "#FF69B4"
+      ],
+      "textColor": "#FFFFFF",
+      "hasPrompt": true,
+      "hasOutputUrl": false,
+      "hasReferenceImages": false,
+      "hasPhotoCount": false,
+      "hasLayout": false
+    },
+    {
+      "id": "stk_mu_ngu_khoc",
+      "name": "Mũ Ngủ Khóc Nhè 😭",
+      "category": "Hiệu Ứng AI 3D Hot 🔥",
+      "type": "normal",
+      "filterType": "normal",
+      "usesOverlay": true,
+      "previewAsset": "stk_mu_ngu_khoc.png",
+      "iconAsset": "stk_mu_ngu_khoc.png",
+      "overlayAsset": "stk_mu_ngu_khoc.png",
+      "captureButtonColors": [
+        "#67E8F9",
+        "#FEF3C7"
+      ],
+      "textColor": "#FFFFFF",
+      "hasPrompt": true,
+      "hasOutputUrl": false,
+      "hasReferenceImages": false,
+      "hasPhotoCount": false,
+      "hasLayout": false
+    },
+    {
+      "id": "stk_jollibee",
+      "name": "Nhân Viên Jollibee 🐝",
+      "category": "Hiệu Ứng AI 3D Hot 🔥",
+      "type": "normal",
+      "filterType": "normal",
+      "usesOverlay": true,
+      "previewAsset": "stk_jollibee.png",
+      "iconAsset": "stk_jollibee.png",
+      "overlayAsset": "stk_jollibee.png",
+      "captureButtonColors": [
+        "#E31837",
+        "#FFC72C"
+      ],
+      "textColor": "#FFFFFF",
+      "hasPrompt": true,
+      "hasOutputUrl": false,
+      "hasReferenceImages": false,
+      "hasPhotoCount": false,
+      "hasLayout": false
+    },
+    {
+      "id": "stk_nak_ve_than",
+      "name": "Nak Vệ Thần ⚔️",
+      "category": "Hiệu Ứng AI 3D Hot 🔥",
+      "type": "normal",
+      "filterType": "normal",
+      "usesOverlay": true,
+      "previewAsset": "stk_nak_ve_than.png",
+      "iconAsset": "stk_nak_ve_than.png",
+      "overlayAsset": "stk_nak_ve_than.png",
+      "captureButtonColors": [
+        "#3B82F6",
+        "#93C5FD"
+      ],
+      "textColor": "#FFFFFF",
+      "hasPrompt": true,
+      "hasOutputUrl": false,
+      "hasReferenceImages": false,
+      "hasPhotoCount": false,
+      "hasLayout": false
+    },
+    {
+      "id": "stk_gojo_satoru",
+      "name": "Gojo Satoru cosplay",
+      "category": "Hiệu Ứng AI 3D Hot 🔥",
+      "type": "normal",
+      "filterType": "normal",
+      "usesOverlay": true,
+      "previewAsset": "stk_gojo_satoru.png",
+      "iconAsset": "stk_gojo_satoru.png",
+      "overlayAsset": "stk_gojo_satoru.png",
+      "captureButtonColors": [
+        "#6366F1",
+        "#A5B4FC"
+      ],
+      "textColor": "#FFFFFF",
+      "hasPrompt": true,
+      "hasOutputUrl": false,
+      "hasReferenceImages": false,
+      "hasPhotoCount": false,
+      "hasLayout": false
+    },
+    {
+      "id": "stk_shopee_food",
+      "name": "Nhân Viên ShopeeFood 🛵",
+      "category": "Hiệu Ứng AI 3D Hot 🔥",
+      "type": "normal",
+      "filterType": "normal",
+      "usesOverlay": true,
+      "previewAsset": "stk_shopee_food.png",
+      "iconAsset": "stk_shopee_food.png",
+      "overlayAsset": "stk_shopee_food.png",
+      "captureButtonColors": [
+        "#EE4D2D",
+        "#FFA07A"
+      ],
+      "textColor": "#FFFFFF",
+      "hasPrompt": true,
+      "hasOutputUrl": false,
+      "hasReferenceImages": false,
+      "hasPhotoCount": false,
+      "hasLayout": false
+    },
+    {
+      "id": "hom_nay_an_gi",
+      "name": "Hôm Nay Ăn Gì?",
+      "category": "Trò Chơi Locket",
+      "type": "normal",
+      "filterType": "normal",
+      "usesOverlay": true,
+      "previewAsset": "hom_nay_an_gi.png",
+      "iconAsset": "hom_nay_an_gi.png",
+      "overlayAsset": "hom_nay_an_gi.png",
+      "captureButtonColors": [
+        "#FF9A3C",
+        "#4FC3F7"
+      ],
+      "textColor": "#FFFFFF",
+      "hasPrompt": true,
+      "hasOutputUrl": false,
+      "hasReferenceImages": false,
+      "hasPhotoCount": false,
+      "hasLayout": false
+    },
+    {
+      "id": "pb_cortis_4cut",
+      "name": "Photobooth Cortis",
+      "category": "Photobooth 📸",
+      "type": "normal",
+      "filterType": "normal",
+      "usesOverlay": true,
+      "previewAsset": "pb_cortis_4cut.png",
+      "iconAsset": "pb_cortis_4cut.png",
+      "overlayAsset": "pb_cortis_4cut.png",
+      "captureButtonColors": [
+        "#1D4ED8",
+        "#93C5FD"
+      ],
+      "textColor": "#FFFFFF",
+      "hasPrompt": true,
+      "hasOutputUrl": false,
+      "hasReferenceImages": false,
+      "hasPhotoCount": false,
+      "hasLayout": false
+    },
+    {
+      "id": "pb_shinchan_4cut",
+      "name": "Photobooth Shin-chan 4-Cut",
+      "category": "Photobooth 📸",
+      "type": "normal",
+      "filterType": "normal",
+      "usesOverlay": true,
+      "previewAsset": "pb_shinchan_4cut.png",
+      "iconAsset": "pb_shinchan_4cut.png",
+      "overlayAsset": "pb_shinchan_4cut.png",
+      "captureButtonColors": [
+        "#1D4ED8",
+        "#93C5FD"
+      ],
+      "textColor": "#FFFFFF",
+      "hasPrompt": true,
+      "hasOutputUrl": false,
+      "hasReferenceImages": false,
+      "hasPhotoCount": false,
+      "hasLayout": false
+    },
+    {
+      "id": "pb_supperman_4cut",
+      "name": "Photobooth Superman 4-Cut",
+      "category": "Photobooth 📸",
+      "type": "normal",
+      "filterType": "normal",
+      "usesOverlay": true,
+      "previewAsset": "pb_supperman_4cut.png",
+      "iconAsset": "pb_supperman_4cut.png",
+      "overlayAsset": "pb_supperman_4cut.png",
+      "captureButtonColors": [
+        "#1D4ED8",
+        "#93C5FD"
+      ],
+      "textColor": "#FFFFFF",
+      "hasPrompt": true,
+      "hasOutputUrl": false,
+      "hasReferenceImages": false,
+      "hasPhotoCount": false,
+      "hasLayout": false
+    },
+    {
+      "id": "pb_meo_dang_yeu_4cut",
+      "name": "Photobooth Mèo Đáng Yêu",
+      "category": "Photobooth 📸",
+      "type": "normal",
+      "filterType": "normal",
+      "usesOverlay": true,
+      "previewAsset": "pb_meo_dang_yeu_4cut.png",
+      "iconAsset": "pb_meo_dang_yeu_4cut.png",
+      "overlayAsset": "pb_meo_dang_yeu_4cut.png",
+      "captureButtonColors": [
+        "#1D4ED8",
+        "#93C5FD"
+      ],
+      "textColor": "#FFFFFF",
+      "hasPrompt": true,
+      "hasOutputUrl": false,
+      "hasReferenceImages": false,
+      "hasPhotoCount": false,
+      "hasLayout": false
+    },
+    {
+      "id": "frame_ba_khi",
+      "name": "Khung Bá Khí",
+      "category": "Khung Viền 🖼️",
+      "type": "normal",
+      "filterType": "normal",
+      "usesOverlay": true,
+      "previewAsset": "frame_ba_khi.png",
+      "iconAsset": "frame_ba_khi.png",
+      "overlayAsset": "frame_ba_khi.png",
+      "captureButtonColors": [
+        "#1D4ED8",
+        "#93C5FD"
+      ],
+      "textColor": "#FFFFFF",
+      "hasPrompt": true,
+      "hasOutputUrl": false,
+      "hasReferenceImages": false,
+      "hasPhotoCount": false,
+      "hasLayout": false
+    },
+    {
+      "id": "pb_cortis_v1",
+      "name": "Photobooth Cortis V1",
+      "category": "Photobooth 📸",
+      "type": "normal",
+      "filterType": "normal",
+      "usesOverlay": true,
+      "previewAsset": "pb_cortis_v1.png",
+      "iconAsset": "pb_cortis_v1.png",
+      "overlayAsset": "pb_cortis_v1.png",
+      "captureButtonColors": [
+        "#1D4ED8",
+        "#93C5FD"
+      ],
+      "textColor": "#FFFFFF",
+      "hasPrompt": true,
+      "hasOutputUrl": false,
+      "hasReferenceImages": false,
+      "hasPhotoCount": false,
+      "hasLayout": false
+    },
+    {
+      "id": "pb_cortis_v2",
+      "name": "Photobooth Cortis V2",
+      "category": "Photobooth 📸",
+      "type": "normal",
+      "filterType": "normal",
+      "usesOverlay": true,
+      "previewAsset": "pb_cortis_v2.png",
+      "iconAsset": "pb_cortis_v2.png",
+      "overlayAsset": "pb_cortis_v2.png",
+      "captureButtonColors": [
+        "#1D4ED8",
+        "#93C5FD"
+      ],
+      "textColor": "#FFFFFF",
+      "hasPrompt": true,
+      "hasOutputUrl": false,
+      "hasReferenceImages": false,
+      "hasPhotoCount": false,
+      "hasLayout": false
+    },
+    {
+      "id": "pb_denim_ripped_2x2",
+      "name": "Photobooth Denim Ripped 2x2",
+      "category": "Photobooth 📸",
+      "type": "normal",
+      "filterType": "normal",
+      "usesOverlay": true,
+      "previewAsset": "pb_denim_ripped_2x2.png",
+      "iconAsset": "pb_denim_ripped_2x2.png",
+      "overlayAsset": "pb_denim_ripped_2x2.png",
+      "captureButtonColors": [
+        "#1D4ED8",
+        "#93C5FD"
+      ],
+      "textColor": "#FFFFFF",
+      "hasPrompt": true,
+      "hasOutputUrl": false,
+      "hasReferenceImages": false,
+      "hasPhotoCount": false,
+      "hasLayout": false
+    },
+    {
+      "id": "pb_ech_xanh",
+      "name": "Photobooth Ếch Xanh",
+      "category": "Photobooth 📸",
+      "type": "normal",
+      "filterType": "normal",
+      "usesOverlay": true,
+      "previewAsset": "pb_ech_xanh.png",
+      "iconAsset": "pb_ech_xanh.png",
+      "overlayAsset": "pb_ech_xanh.png",
+      "captureButtonColors": [
+        "#1D4ED8",
+        "#93C5FD"
+      ],
+      "textColor": "#FFFFFF",
+      "hasPrompt": true,
+      "hasOutputUrl": false,
+      "hasReferenceImages": false,
+      "hasPhotoCount": false,
+      "hasLayout": false
+    },
+    {
+      "id": "pb_galaxy",
+      "name": "Photobooth Galaxy Y2K",
+      "category": "Photobooth 📸",
+      "type": "normal",
+      "filterType": "normal",
+      "usesOverlay": true,
+      "previewAsset": "pb_galaxy.png",
+      "iconAsset": "pb_galaxy.png",
+      "overlayAsset": "pb_galaxy.png",
+      "captureButtonColors": [
+        "#1D4ED8",
+        "#93C5FD"
+      ],
+      "textColor": "#FFFFFF",
+      "hasPrompt": true,
+      "hasOutputUrl": false,
+      "hasReferenceImages": false,
+      "hasPhotoCount": false,
+      "hasLayout": false
+    },
+    {
+      "id": "pb_holo_4cut",
+      "name": "Photobooth Hologram 4-Cut",
+      "category": "Photobooth 📸",
+      "type": "normal",
+      "filterType": "normal",
+      "usesOverlay": true,
+      "previewAsset": "pb_holo_4cut.png",
+      "iconAsset": "pb_holo_4cut.png",
+      "overlayAsset": "pb_holo_4cut.png",
+      "captureButtonColors": [
+        "#1D4ED8",
+        "#93C5FD"
+      ],
+      "textColor": "#FFFFFF",
+      "hasPrompt": true,
+      "hasOutputUrl": false,
+      "hasReferenceImages": false,
+      "hasPhotoCount": false,
+      "hasLayout": false
+    },
+    {
+      "id": "pb_photobooth_hello_kitty",
+      "name": "Photobooth Hello Kitty Cute",
+      "category": "Photobooth 📸",
+      "type": "normal",
+      "filterType": "normal",
+      "usesOverlay": true,
+      "previewAsset": "pb_photobooth_hello_kitty.png",
+      "iconAsset": "pb_photobooth_hello_kitty.png",
+      "overlayAsset": "pb_photobooth_hello_kitty.png",
+      "captureButtonColors": [
+        "#1D4ED8",
+        "#93C5FD"
+      ],
+      "textColor": "#FFFFFF",
+      "hasPrompt": true,
+      "hasOutputUrl": false,
+      "hasReferenceImages": false,
+      "hasPhotoCount": false,
+      "hasLayout": false
+    },
+    {
+      "id": "pb_ripped_paper_4cut",
+      "name": "Photobooth Giấy Xé Ripped",
+      "category": "Photobooth 📸",
+      "type": "normal",
+      "filterType": "normal",
+      "usesOverlay": true,
+      "previewAsset": "pb_ripped_paper_4cut.png",
+      "iconAsset": "pb_ripped_paper_4cut.png",
+      "overlayAsset": "pb_ripped_paper_4cut.png",
+      "captureButtonColors": [
+        "#1D4ED8",
+        "#93C5FD"
+      ],
+      "textColor": "#FFFFFF",
+      "hasPrompt": true,
+      "hasOutputUrl": false,
+      "hasReferenceImages": false,
+      "hasPhotoCount": false,
+      "hasLayout": false
+    },
+    {
+      "id": "pb_scrapbook_ripped_4cut",
+      "name": "Photobooth Scrapbook Vintage",
+      "category": "Photobooth 📸",
+      "type": "normal",
+      "filterType": "normal",
+      "usesOverlay": true,
+      "previewAsset": "pb_scrapbook_ripped_4cut.png",
+      "iconAsset": "pb_scrapbook_ripped_4cut.png",
+      "overlayAsset": "pb_scrapbook_ripped_4cut.png",
+      "captureButtonColors": [
+        "#1D4ED8",
+        "#93C5FD"
+      ],
+      "textColor": "#FFFFFF",
+      "hasPrompt": true,
+      "hasOutputUrl": false,
+      "hasReferenceImages": false,
+      "hasPhotoCount": false,
+      "hasLayout": false
+    },
+    {
+      "id": "pb_single_denim_ripped",
+      "name": "Photobooth Denim 1 Ô",
+      "category": "Photobooth 📸",
+      "type": "normal",
+      "filterType": "normal",
+      "usesOverlay": true,
+      "previewAsset": "pb_single_denim_ripped.png",
+      "iconAsset": "pb_single_denim_ripped.png",
+      "overlayAsset": "pb_single_denim_ripped.png",
+      "captureButtonColors": [
+        "#1D4ED8",
+        "#93C5FD"
+      ],
+      "textColor": "#FFFFFF",
+      "hasPrompt": true,
+      "hasOutputUrl": false,
+      "hasReferenceImages": false,
+      "hasPhotoCount": false,
+      "hasLayout": false
+    },
+    {
+      "id": "pb_single_film_nostalgia",
+      "name": "Photobooth Film Nostalgia",
+      "category": "Photobooth 📸",
+      "type": "normal",
+      "filterType": "normal",
+      "usesOverlay": true,
+      "previewAsset": "pb_single_film_nostalgia.png",
+      "iconAsset": "pb_single_film_nostalgia.png",
+      "overlayAsset": "pb_single_film_nostalgia.png",
+      "captureButtonColors": [
+        "#1D4ED8",
+        "#93C5FD"
+      ],
+      "textColor": "#FFFFFF",
+      "hasPrompt": true,
+      "hasOutputUrl": false,
+      "hasReferenceImages": false,
+      "hasPhotoCount": false,
+      "hasLayout": false
+    },
+    {
+      "id": "pb_single_y2k_silver_holo",
+      "name": "Photobooth Y2K Silver Holo",
+      "category": "Photobooth 📸",
+      "type": "normal",
+      "filterType": "normal",
+      "usesOverlay": true,
+      "previewAsset": "pb_single_y2k_silver_holo.png",
+      "iconAsset": "pb_single_y2k_silver_holo.png",
+      "overlayAsset": "pb_single_y2k_silver_holo.png",
+      "captureButtonColors": [
+        "#1D4ED8",
+        "#93C5FD"
+      ],
+      "textColor": "#FFFFFF",
+      "hasPrompt": true,
+      "hasOutputUrl": false,
+      "hasReferenceImages": false,
+      "hasPhotoCount": false,
+      "hasLayout": false
+    },
+    {
+      "id": "pb_strawberry",
+      "name": "Photobooth Dâu Tây Strawberry",
+      "category": "Photobooth 📸",
+      "type": "normal",
+      "filterType": "normal",
+      "usesOverlay": true,
+      "previewAsset": "pb_strawberry.png",
+      "iconAsset": "pb_strawberry.png",
+      "overlayAsset": "pb_strawberry.png",
+      "captureButtonColors": [
+        "#1D4ED8",
+        "#93C5FD"
+      ],
+      "textColor": "#FFFFFF",
+      "hasPrompt": true,
+      "hasOutputUrl": false,
+      "hasReferenceImages": false,
+      "hasPhotoCount": false,
+      "hasLayout": false
+    },
+    {
+      "id": "pb_trung_bac_thao",
+      "name": "Photobooth Trứng Bắc Thảo",
+      "category": "Photobooth 📸",
+      "type": "normal",
+      "filterType": "normal",
+      "usesOverlay": true,
+      "previewAsset": "pb_trung_bac_thao.png",
+      "iconAsset": "pb_trung_bac_thao.png",
+      "overlayAsset": "pb_trung_bac_thao.png",
+      "captureButtonColors": [
+        "#1D4ED8",
+        "#93C5FD"
+      ],
+      "textColor": "#FFFFFF",
+      "hasPrompt": true,
+      "hasOutputUrl": false,
+      "hasReferenceImages": false,
+      "hasPhotoCount": false,
+      "hasLayout": false
+    },
+    {
+      "id": "pb_vien_hello_kitty",
+      "name": "Photobooth Viền Hello Kitty",
+      "category": "Photobooth 📸",
+      "type": "normal",
+      "filterType": "normal",
+      "usesOverlay": true,
+      "previewAsset": "pb_vien_hello_kitty.png",
+      "iconAsset": "pb_vien_hello_kitty.png",
+      "overlayAsset": "pb_vien_hello_kitty.png",
+      "captureButtonColors": [
+        "#1D4ED8",
+        "#93C5FD"
+      ],
+      "textColor": "#FFFFFF",
+      "hasPrompt": true,
+      "hasOutputUrl": false,
+      "hasReferenceImages": false,
+      "hasPhotoCount": false,
+      "hasLayout": false
+    },
+    {
+      "id": "pb_vintage",
+      "name": "Photobooth Vintage Classic",
+      "category": "Photobooth 📸",
+      "type": "normal",
+      "filterType": "normal",
+      "usesOverlay": true,
+      "previewAsset": "pb_vintage.png",
+      "iconAsset": "pb_vintage.png",
+      "overlayAsset": "pb_vintage.png",
+      "captureButtonColors": [
+        "#1D4ED8",
+        "#93C5FD"
+      ],
+      "textColor": "#FFFFFF",
+      "hasPrompt": true,
+      "hasOutputUrl": false,
+      "hasReferenceImages": false,
+      "hasPhotoCount": false,
+      "hasLayout": false
+    },
+    {
+      "id": "photobooth_4cut",
+      "name": "Photobooth 4-Cut Classic",
+      "category": "Photobooth 📸",
+      "type": "normal",
+      "filterType": "normal",
+      "usesOverlay": true,
+      "previewAsset": "photobooth_4cut.png",
+      "iconAsset": "photobooth_4cut.png",
+      "overlayAsset": "photobooth_4cut.png",
+      "captureButtonColors": [
+        "#1D4ED8",
+        "#93C5FD"
+      ],
+      "textColor": "#FFFFFF",
+      "hasPrompt": true,
+      "hasOutputUrl": false,
+      "hasReferenceImages": false,
+      "hasPhotoCount": false,
+      "hasLayout": false
+    },
+    {
+      "id": "photobooth_cute",
+      "name": "Photobooth Pastel Cute",
+      "category": "Photobooth 📸",
+      "type": "normal",
+      "filterType": "normal",
+      "usesOverlay": true,
+      "previewAsset": "photobooth_cute.png",
+      "iconAsset": "photobooth_cute.png",
+      "overlayAsset": "photobooth_cute.png",
+      "captureButtonColors": [
+        "#1D4ED8",
+        "#93C5FD"
+      ],
+      "textColor": "#FFFFFF",
+      "hasPrompt": true,
+      "hasOutputUrl": false,
+      "hasReferenceImages": false,
+      "hasPhotoCount": false,
+      "hasLayout": false
+    },
+    {
+      "id": "khung_anh_o_kitty_v_sao",
+      "name": "Khung Ô Kitty & Ngôi Sao",
+      "category": "Khung Viền 🖼️",
+      "type": "normal",
+      "filterType": "normal",
+      "usesOverlay": true,
+      "previewAsset": "khung_anh_o_kitty_v_sao.png",
+      "iconAsset": "khung_anh_o_kitty_v_sao.png",
+      "overlayAsset": "khung_anh_o_kitty_v_sao.png",
+      "captureButtonColors": [
+        "#1D4ED8",
+        "#93C5FD"
+      ],
+      "textColor": "#FFFFFF",
+      "hasPrompt": true,
+      "hasOutputUrl": false,
+      "hasReferenceImages": false,
+      "hasPhotoCount": false,
+      "hasLayout": false
+    },
+    {
+      "id": "khung_doraemon_shinchan_kitty",
+      "name": "Khung Doraemon & Shinchan",
+      "category": "Khung Viền 🖼️",
+      "type": "normal",
+      "filterType": "normal",
+      "usesOverlay": true,
+      "previewAsset": "khung_doraemon_shinchan_kitty.png",
+      "iconAsset": "khung_doraemon_shinchan_kitty.png",
+      "overlayAsset": "khung_doraemon_shinchan_kitty.png",
+      "captureButtonColors": [
+        "#1D4ED8",
+        "#93C5FD"
+      ],
+      "textColor": "#FFFFFF",
+      "hasPrompt": true,
+      "hasOutputUrl": false,
+      "hasReferenceImages": false,
+      "hasPhotoCount": false,
+      "hasLayout": false
+    },
+    {
+      "id": "khung_hello_kitty_h_ng_pastel",
+      "name": "Khung Hello Kitty Hồng Pastel",
+      "category": "Khung Viền 🖼️",
+      "type": "normal",
+      "filterType": "normal",
+      "usesOverlay": true,
+      "previewAsset": "khung_hello_kitty_h_ng_pastel.png",
+      "iconAsset": "khung_hello_kitty_h_ng_pastel.png",
+      "overlayAsset": "khung_hello_kitty_h_ng_pastel.png",
+      "captureButtonColors": [
+        "#1D4ED8",
+        "#93C5FD"
+      ],
+      "textColor": "#FFFFFF",
+      "hasPrompt": true,
+      "hasOutputUrl": false,
+      "hasReferenceImages": false,
+      "hasPhotoCount": false,
+      "hasLayout": false
+    },
+    {
+      "id": "khung_hello_kitty_pastel_ng_t_ng_o",
+      "name": "Khung Hello Kitty Ngọt Ngào",
+      "category": "Khung Viền 🖼️",
+      "type": "normal",
+      "filterType": "normal",
+      "usesOverlay": true,
+      "previewAsset": "khung_hello_kitty_pastel_ng_t_ng_o.png",
+      "iconAsset": "khung_hello_kitty_pastel_ng_t_ng_o.png",
+      "overlayAsset": "khung_hello_kitty_pastel_ng_t_ng_o.png",
+      "captureButtonColors": [
+        "#1D4ED8",
+        "#93C5FD"
+      ],
+      "textColor": "#FFFFFF",
+      "hasPrompt": true,
+      "hasOutputUrl": false,
+      "hasReferenceImages": false,
+      "hasPhotoCount": false,
+      "hasLayout": false
+    },
+    {
+      "id": "khung_kh_ng_gian_xanh_pastel",
+      "name": "Khung Không Gian Xanh Pastel",
+      "category": "Khung Viền 🖼️",
+      "type": "normal",
+      "filterType": "normal",
+      "usesOverlay": true,
+      "previewAsset": "khung_kh_ng_gian_xanh_pastel.png",
+      "iconAsset": "khung_kh_ng_gian_xanh_pastel.png",
+      "overlayAsset": "khung_kh_ng_gian_xanh_pastel.png",
+      "captureButtonColors": [
+        "#1D4ED8",
+        "#93C5FD"
+      ],
+      "textColor": "#FFFFFF",
+      "hasPrompt": true,
+      "hasOutputUrl": false,
+      "hasReferenceImages": false,
+      "hasPhotoCount": false,
+      "hasLayout": false
+    },
+    {
+      "id": "khung_nh_hoa_pastel_vi_n_xanh_m_nh",
+      "name": "Khung Nhành Hoa Pastel Viền Xanh",
+      "category": "Khung Viền 🖼️",
+      "type": "normal",
+      "filterType": "normal",
+      "usesOverlay": true,
+      "previewAsset": "khung_nh_hoa_pastel_vi_n_xanh_m_nh.png",
+      "iconAsset": "khung_nh_hoa_pastel_vi_n_xanh_m_nh.png",
+      "overlayAsset": "khung_nh_hoa_pastel_vi_n_xanh_m_nh.png",
+      "captureButtonColors": [
+        "#1D4ED8",
+        "#93C5FD"
+      ],
+      "textColor": "#FFFFFF",
+      "hasPrompt": true,
+      "hasOutputUrl": false,
+      "hasReferenceImages": false,
+      "hasPhotoCount": false,
+      "hasLayout": false
+    },
+    {
+      "id": "khung_nh_n_pastel_vi_n_ren",
+      "name": "Khung Nhẫn Pastel Viền Ren",
+      "category": "Khung Viền 🖼️",
+      "type": "normal",
+      "filterType": "normal",
+      "usesOverlay": true,
+      "previewAsset": "khung_nh_n_pastel_vi_n_ren.png",
+      "iconAsset": "khung_nh_n_pastel_vi_n_ren.png",
+      "overlayAsset": "khung_nh_n_pastel_vi_n_ren.png",
+      "captureButtonColors": [
+        "#1D4ED8",
+        "#93C5FD"
+      ],
+      "textColor": "#FFFFFF",
+      "hasPrompt": true,
+      "hasOutputUrl": false,
+      "hasReferenceImages": false,
+      "hasPhotoCount": false,
+      "hasLayout": false
+    },
+    {
+      "id": "khung_nh_pastel_vi_n_s_h_i_c_u",
+      "name": "Khung Pastel Sò Hải Cẩu",
+      "category": "Khung Viền 🖼️",
+      "type": "normal",
+      "filterType": "normal",
+      "usesOverlay": true,
+      "previewAsset": "khung_nh_pastel_vi_n_s_h_i_c_u.png",
+      "iconAsset": "khung_nh_pastel_vi_n_s_h_i_c_u.png",
+      "overlayAsset": "khung_nh_pastel_vi_n_s_h_i_c_u.png",
+      "captureButtonColors": [
+        "#1D4ED8",
+        "#93C5FD"
+      ],
+      "textColor": "#FFFFFF",
+      "hasPrompt": true,
+      "hasOutputUrl": false,
+      "hasReferenceImages": false,
+      "hasPhotoCount": false,
+      "hasLayout": false
+    },
+    {
+      "id": "khung_nh_shin_chan_vi_n_m_nh",
+      "name": "Khung Shinchan Viền Mảnh",
+      "category": "Khung Viền 🖼️",
+      "type": "normal",
+      "filterType": "normal",
+      "usesOverlay": true,
+      "previewAsset": "khung_nh_shin_chan_vi_n_m_nh.png",
+      "iconAsset": "khung_nh_shin_chan_vi_n_m_nh.png",
+      "overlayAsset": "khung_nh_shin_chan_vi_n_m_nh.png",
+      "captureButtonColors": [
+        "#1D4ED8",
+        "#93C5FD"
+      ],
+      "textColor": "#FFFFFF",
+      "hasPrompt": true,
+      "hasOutputUrl": false,
+      "hasReferenceImages": false,
+      "hasPhotoCount": false,
+      "hasLayout": false
+    },
+    {
+      "id": "khung_nh_vu_ng_m_ng_nh_n_b_c",
+      "name": "Khung Vương Miện Bạc",
+      "category": "Khung Viền 🖼️",
+      "type": "normal",
+      "filterType": "normal",
+      "usesOverlay": true,
+      "previewAsset": "khung_nh_vu_ng_m_ng_nh_n_b_c.png",
+      "iconAsset": "khung_nh_vu_ng_m_ng_nh_n_b_c.png",
+      "overlayAsset": "khung_nh_vu_ng_m_ng_nh_n_b_c.png",
+      "captureButtonColors": [
+        "#1D4ED8",
+        "#93C5FD"
+      ],
+      "textColor": "#FFFFFF",
+      "hasPrompt": true,
+      "hasOutputUrl": false,
+      "hasReferenceImages": false,
+      "hasPhotoCount": false,
+      "hasLayout": false
+    },
+    {
+      "id": "khung_vu_ng_ng_i_sao_h_ng_pastel",
+      "name": "Khung Vương Miện Sao Hồng",
+      "category": "Khung Viền 🖼️",
+      "type": "normal",
+      "filterType": "normal",
+      "usesOverlay": true,
+      "previewAsset": "khung_vu_ng_ng_i_sao_h_ng_pastel.png",
+      "iconAsset": "khung_vu_ng_ng_i_sao_h_ng_pastel.png",
+      "overlayAsset": "khung_vu_ng_ng_i_sao_h_ng_pastel.png",
+      "captureButtonColors": [
+        "#1D4ED8",
+        "#93C5FD"
+      ],
+      "textColor": "#FFFFFF",
+      "hasPrompt": true,
+      "hasOutputUrl": false,
+      "hasReferenceImages": false,
+      "hasPhotoCount": false,
+      "hasLayout": false
+    },
+    {
+      "id": "khung_xanh_v_tay_sao_v_ng",
+      "name": "Khung Xanh Vẽ Tay Sao Vàng",
+      "category": "Khung Viền 🖼️",
+      "type": "normal",
+      "filterType": "normal",
+      "usesOverlay": true,
+      "previewAsset": "khung_xanh_v_tay_sao_v_ng.png",
+      "iconAsset": "khung_xanh_v_tay_sao_v_ng.png",
+      "overlayAsset": "khung_xanh_v_tay_sao_v_ng.png",
+      "captureButtonColors": [
+        "#1D4ED8",
+        "#93C5FD"
+      ],
+      "textColor": "#FFFFFF",
+      "hasPrompt": true,
+      "hasOutputUrl": false,
+      "hasReferenceImages": false,
+      "hasPhotoCount": false,
+      "hasLayout": false
+    }
+  ],
+  "photoboothIds": [
+    "pb_cortis_4cut",
+    "pb_shinchan_4cut",
+    "pb_supperman_4cut",
+    "pb_meo_dang_yeu_4cut",
+    "pb_cortis_v1",
+    "pb_cortis_v2",
+    "pb_denim_ripped_2x2",
+    "pb_ech_xanh",
+    "pb_galaxy",
+    "pb_holo_4cut",
+    "pb_photobooth_hello_kitty",
+    "pb_ripped_paper_4cut",
+    "pb_scrapbook_ripped_4cut",
+    "pb_single_denim_ripped",
+    "pb_single_film_nostalgia",
+    "pb_single_y2k_silver_holo",
+    "pb_strawberry",
+    "pb_trung_bac_thao",
+    "pb_vien_hello_kitty",
+    "pb_vintage",
+    "photobooth_4cut",
+    "photobooth_cute"
+  ],
+  "widgetOverlay": {
+    "id": "frame_mphong_1",
+    "placement": "above",
+    "asset": "frame_ba_khi.png"
+  },
+  "profileObservation": {
+    "cloudFunctionHookCount": 1,
+    "cloudFunctionHookTypes": [
+      "http-request"
+    ],
+    "cloudFunctionHookReadsBody": false,
+    "hasCloudFunctionUrlRewrite": true
+  },
+  "endpointMentions": {
+    "generateFilteredImage": [
+      84,
+      149
+    ],
+    "createOverlay": [
+      149
+    ],
+    "generateFilter": [
+      84,
+      149
+    ],
+    "applyFilter": [
+      149
+    ],
+    "getFilters": [
+      618,
+      619
+    ],
+    "createFilter": [
+      618,
+      619
+    ]
+  }
+}

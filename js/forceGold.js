@@ -5,10 +5,19 @@
 // Origin by NMS
 // ============================================================
 
-var ua = $request.headers["User-Agent"] || $request.headers["user-agent"] || "";
-var obj = JSON.parse($response.body);
+// The original module names its rule locket_rc. The Photobooth module and
+// runtimes without rule metadata use only the scoped Firebase handler below.
+if (typeof $script !== "undefined" && $script && $script.name === "locket_rc") {
+    rewriteLegacyConfig();
+} else {
+    rewritePhotoboothConfig(typeof $request === "undefined" ? null : $request,
+        typeof $response === "undefined" ? null : $response, $done);
+}
 
-if (ua.includes("Locket")) {
+function rewriteLegacyConfig() {
+    var ua = $request.headers["User-Agent"] || $request.headers["user-agent"] || "";
+    var obj = JSON.parse($response.body);
+    if (!ua.includes("Locket")) return $done({ body: JSON.stringify(obj) });
     obj.Attention = "Chúc mừng bạn! Vui lòng không bán hoặc chia sẻ cho người khác!";
     obj.entries = obj.entries || {};
 
@@ -132,7 +141,9 @@ if (ua.includes("Locket")) {
             catch_up: true,
             widget_looping_mode: "never"
         }),
-        camera_filter_config: JSON.stringify({
+        // The old six groups are a fallback for responses without a catalog.
+        camera_filter_config: Object.prototype.hasOwnProperty.call(obj.entries, "camera_filter_config")
+            ? obj.entries.camera_filter_config : JSON.stringify({
             allows_custom_filters: true,
             show_filter_button: true,
             sheet_enabled: true,
@@ -366,7 +377,13 @@ if (ua.includes("Locket")) {
     // ============================================================
     // 8. OVERLAY & CUSTOM CAPTIONS
     // ============================================================
-    Object.assign(obj.entries, {
+    updatePhotoboothSheet(obj.entries);
+    setKhon168Captions(obj.entries);
+    $done({ body: JSON.stringify(obj) });
+}
+
+function setKhon168Captions(entries) {
+    Object.assign(entries, {
         overlay_navigator_enabled: "true",
         overlays_v2_config: JSON.stringify({ suggestions_enabled: true }),
         captions_enabled: "true",
@@ -666,4 +683,161 @@ if (ua.includes("Locket")) {
     });
 }
 
-$done({ body: JSON.stringify(obj) });
+function updatePhotoboothSheet(entries) {
+    // Only these counts and fixed status words may reach the device log.
+    const stats = { state: "missing-config", picker: 0, inSheet: 0, eligible: 0, added: 0 };
+    if (!Object.prototype.hasOwnProperty.call(entries, "camera_filter_config")) return stats;
+    let camera;
+    try {
+        camera = JSON.parse(entries.camera_filter_config);
+    } catch {
+        stats.state = "invalid-config";
+        return stats;
+    }
+    const isId = (id) => typeof id === "string" && id.length > 0;
+    const isGroup = (group) => group && group.title && typeof group.title === "object" &&
+        !Array.isArray(group.title) && Object.values(group.title).some(isId) &&
+        Array.isArray(group.filter_ids) && group.filter_ids.every(isId);
+    const isBooth = (label) => typeof label === "string" && /^photo\s?booth(?:\s*[📸📷]\uFE0F?)?$/iu.test(label.trim());
+    const sheet = camera && camera.sheet_filters;
+    const picker = camera && camera.picker_filters;
+    stats.state = "unknown-shape";
+    if (!Array.isArray(sheet) || !sheet.length || !sheet.every(isGroup) ||
+        !Array.isArray(picker) || !picker.every(isId)) return stats;
+    stats.picker = picker.length;
+    const groups = sheet.filter((group) => Object.values(group.title).some(isBooth));
+    stats.inSheet = groups.reduce((count, group) => count + group.filter_ids.length, 0);
+    // Some versions of the reference declare both spellings. Keep matching
+    // copies in sync, and leave a divergent or disabled configuration intact.
+    if (groups.length > 1 ||
+        ("sheetFilters" in camera && JSON.stringify(camera.sheetFilters) !== JSON.stringify(sheet)) ||
+        ("pickerFilters" in camera && JSON.stringify(camera.pickerFilters) !== JSON.stringify(picker))) {
+        stats.state = "ambiguous-sheet";
+        return stats;
+    }
+    if (["sheet_enabled", "sheetEnabled", "show_filter_button", "showFilterButton"].some(
+        (key) => key in camera && camera[key] !== true)) {
+        stats.state = "inactive-sheet";
+        return stats;
+    }
+    const catalogs = ["filters", "remote_filters", "remoteFilters"].filter((key) => key in camera)
+        .map((key) => camera[key]);
+    if (!catalogs.length || !catalogs.every(Array.isArray)) {
+        stats.state = "missing-catalog";
+        return stats;
+    }
+    // A matching name in the reference ZIP cannot register a renderer.
+    // Only group records supplied by this response AND selectable in its picker.
+    const eligible = new Set(picker);
+    for (const catalog of catalogs) {
+        const matched = new Set();
+        for (const record of catalog) {
+            if (!record || !eligible.has(record.id)) continue;
+            if (isBooth(record.category) && record.type === "normal" && record.overlay === true) {
+                matched.add(record.id);
+            } else {
+                eligible.delete(record.id);
+            }
+        }
+        for (const id of eligible) if (!matched.has(id)) eligible.delete(id);
+    }
+    stats.eligible = eligible.size;
+    const group = groups[0];
+    const existing = new Set(group ? group.filter_ids : []);
+    const missing = [...eligible].filter((id) => !existing.has(id));
+    stats.state = "checked";
+    if (!missing.length) return stats;
+    if (group) {
+        group.filter_ids = group.filter_ids.concat(missing);
+    } else {
+        sheet.push({ title: { en: "Photobooth 📸", vi: "Photobooth 📸" }, filter_ids: missing });
+    }
+    if ("sheetFilters" in camera) camera.sheetFilters = sheet;
+    entries.camera_filter_config = JSON.stringify(camera);
+    stats.added = missing.length;
+    return stats;
+}
+
+function mergeKhon168Captions(entries) {
+    function parseArray(value) {
+        if (typeof value !== "string") return null;
+        try {
+            const decoded = JSON.parse(value);
+            return Array.isArray(decoded) ? decoded : null;
+        } catch {
+            return null;
+        }
+    }
+    const groups = parseArray(entries.overlay_items);
+    if (!groups || groups.some((group) => !group || typeof group.section !== "string" ||
+        !Array.isArray(group.items) || group.items.some((item) => !item || typeof item.overlay_id !== "string"))) {
+        return false;
+    }
+    const source = {};
+    setKhon168Captions(source);
+    const seen = new Set();
+    const sections = new Map();
+    for (const group of groups) {
+        if (!sections.has(group.section)) sections.set(group.section, group);
+        for (const item of group.items) seen.add(item.overlay_id);
+    }
+    let changed = false;
+    for (const group of JSON.parse(source.overlay_items)) {
+        const items = [];
+        for (const item of group.items) {
+            if (!seen.has(item.overlay_id)) {
+                seen.add(item.overlay_id);
+                items.push(item);
+            }
+        }
+        if (!items.length) continue;
+        changed = true;
+        const target = sections.get(group.section);
+        if (target) {
+            target.items.push(...items);
+        } else {
+            const added = { ...group, items };
+            groups.push(added);
+            sections.set(added.section, added);
+        }
+    }
+    if (changed) entries.overlay_items = JSON.stringify(groups);
+    const types = parseArray(entries.overlay_dynamic_captions);
+    if (types && types.every((type) => typeof type === "string")) {
+        const missing = JSON.parse(source.overlay_dynamic_captions).filter((type) => !types.includes(type));
+        if (missing.length) {
+            entries.overlay_dynamic_captions = JSON.stringify([...types, ...missing]);
+            changed = true;
+        }
+    }
+    return changed;
+}
+
+function rewritePhotoboothConfig(request, response, done) {
+    const fetchUrl = /^https:\/\/firebaseremoteconfig\.googleapis\.com\/v1\/projects\/locket-4252a\/namespaces\/firebase:fetch(?:\?[^#]*)?$/;
+    if (!request || request.method !== "POST" || !fetchUrl.test(request.url) ||
+        !response || typeof response.body !== "string") return done({});
+    const statuses = [response.status, response.statusCode].filter((value) => value != null);
+    if (!statuses.length || !statuses.every((value) => value === 200 || value === "200" ||
+        (typeof value === "string" && /^HTTP\/[\d.]+ 200(?:\s|$)/i.test(value)))) return done({});
+    function logStatus(message) {
+        if (typeof console !== "undefined" && typeof console.log === "function") console.log("KHON168 Filter | " + message);
+    }
+    let payload;
+    try {
+        payload = JSON.parse(response.body);
+    } catch {
+        return done({});
+    }
+    if (!payload) return done({});
+    if (payload.state === "NO_CHANGE") {
+        logStatus("no-change");
+        return done({});
+    }
+    const entries = payload.entries;
+    if (payload.state !== "UPDATE" || !entries || typeof entries !== "object" || Array.isArray(entries)) return done({});
+    const stats = updatePhotoboothSheet(entries);
+    const captionsChanged = mergeKhon168Captions(entries);
+    logStatus(`${stats.state} | picker=${stats.picker} | inSheet=${stats.inSheet} | eligible=${stats.eligible} | added=${stats.added}`);
+    return stats.added || captionsChanged ? done({ body: JSON.stringify(payload) }) : done({});
+}

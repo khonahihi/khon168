@@ -1,0 +1,19 @@
+{
+  "id": "rose-duet",
+  "name": "Hồng Song",
+  "description": "Lãng mạn · Dọc",
+  "photoCount": 2,
+  "canvas": {
+    "width": 1120,
+    "height": 1660
+  },
+  "background": "#F6D4DF",
+  "slotColor": "#E2AABB",
+  "gap": 38,
+  "order": 1,
+  "overlay": "rose-duet.svg",
+  "slots": [
+    {"left": 104, "top": 125, "width": 912, "height": 630, "radius": 22, "fit": "cover", "x": 0.5, "y": 0.5},
+    {"left": 104, "top": 807, "width": 912, "height": 630, "radius": 22, "fit": "cover", "x": 0.5, "y": 0.5}
+  ]
+}

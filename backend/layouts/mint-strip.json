@@ -1,0 +1,21 @@
+{
+  "id": "mint-strip",
+  "name": "Dải Bạc Hà",
+  "description": "Film strip · Dọc",
+  "photoCount": 4,
+  "canvas": {
+    "width": 800,
+    "height": 2000
+  },
+  "background": "#D9EDCE",
+  "slotColor": "#9EC6A3",
+  "gap": 32,
+  "order": 2,
+  "overlay": "mint-strip.svg",
+  "slots": [
+    {"left": 90, "top": 115, "width": 620, "height": 390, "radius": 9, "fit": "cover", "x": 0.5, "y": 0.5},
+    {"left": 90, "top": 542, "width": 620, "height": 390, "radius": 9, "fit": "cover", "x": 0.5, "y": 0.5},
+    {"left": 90, "top": 969, "width": 620, "height": 390, "radius": 9, "fit": "cover", "x": 0.5, "y": 0.5},
+    {"left": 90, "top": 1396, "width": 620, "height": 390, "radius": 9, "fit": "cover", "x": 0.5, "y": 0.5}
+  ]
+}

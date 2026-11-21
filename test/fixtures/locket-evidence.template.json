@@ -1,0 +1,47 @@
+{
+  "device": {
+    "iosVersion": null,
+    "locketVersion": null,
+    "entryPoint": null,
+    "photoboothVisible": null,
+    "frameSelected": null,
+    "captureCounts": null,
+    "nativeResultVisible": null,
+    "resultBehavior": null,
+    "nativePostSucceeded": null
+  },
+  "extension": {
+    "sourceType": null,
+    "source": null,
+    "filterConfigSchema": null,
+    "processing": null,
+    "processingEvidence": null,
+    "allowsCustomHttpsOrigin": null,
+    "forwardsLocketCredentials": null
+  },
+  "endpoints": [
+    {
+      "purpose": "compose",
+      "photoboothOnly": null,
+      "request": {
+        "method": null,
+        "path": null,
+        "headers": null,
+        "contentType": null,
+        "schema": null,
+        "imageEncoding": null,
+        "photoCount": null,
+        "imageOrder": null,
+        "frameKey": null
+      },
+      "response": {
+        "status": null,
+        "contentType": null,
+        "schema": null,
+        "imageFormat": null,
+        "imageDelivery": null,
+        "errorSchema": null
+      }
+    }
+  ]
+}
