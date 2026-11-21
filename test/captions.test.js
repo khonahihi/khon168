@@ -1,17 +1,14 @@
 import assert from 'node:assert/strict';
-import { readFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
 import test from 'node:test';
-import { runInNewContext } from 'node:vm';
+import { readLegacyCaptions } from '../scripts/locket-caption-data.js';
 
 test('legacy Custom Captions serialize Vietnamese, emoji, ordered colors and dynamic types', async () => {
-  const script = await readFile(new URL('../js/forceGold.js', import.meta.url), 'utf8');
-  const captionSection = script.slice(script.indexOf('// 8. OVERLAY & CUSTOM CAPTIONS'));
-  const assignment = captionSection.slice(captionSection.indexOf('Object.assign'), captionSection.indexOf('\n}'));
-  const obj = { entries: {} };
-  // Only evaluate the caption assignment, with a local placeholder instead of a network response.
-  runInNewContext(assignment, { obj }, { timeout: 1000 });
-  const sections = JSON.parse(obj.entries.overlay_items);
-  const captions = sections.flatMap(({ items }) => items);
+  const { groups, dynamicTypes } = await readLegacyCaptions();
+  // Baseline from cf85d6b. Covers all items, accents, gradients and their order.
+  assert.equal(createHash('sha256').update(JSON.stringify([groups, dynamicTypes])).digest('hex'),
+    '039a48e71582566e46d7a3764008fac46393eac1744e86e4f556412c93afb062');
+  const captions = groups.flatMap(({ items }) => items);
   assert.equal(captions[0].overlay_id, 'caption:standard');
   assert.equal(captions[0].source, 'local');
   assert.deepEqual(captions.find(({ overlay_id }) => overlay_id === 'caption:thai_tu_o_tro').caption, {
@@ -24,5 +21,5 @@ test('legacy Custom Captions serialize Vietnamese, emoji, ordered colors and dyn
     type: 'static_content',
   });
   assert(captions.some(({ caption }) => caption.background?.colors?.length === 2));
-  assert(JSON.parse(obj.entries.overlay_dynamic_captions).includes('poll'));
+  assert(dynamicTypes.includes('poll'));
 });

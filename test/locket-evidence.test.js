@@ -15,8 +15,8 @@ function check(...args) {
 test('the Locket template reports missing evidence without claiming compatibility', () => {
   const result = check();
   assert.equal(result.status, 2);
-  assert.match(result.stdout, /chưa đạt.*HTTP method/);
-  assert.match(result.stdout, /Còn 13\/13 tiêu chí cần bổ sung\. Chưa đủ căn cứ tạo adapter/);
+  assert.match(result.stdout, /chưa đạt.*Schema cấu hình Filter/);
+  assert.match(result.stdout, /Còn 8\/8 tiêu chí cần bổ sung\. Chưa đủ căn cứ xác nhận/);
 });
 
 test('the evidence checker distinguishes a complete synthetic form from unsafe or invalid input', async () => {
@@ -26,10 +26,13 @@ test('the evidence checker distinguishes a complete synthetic form from unsafe o
     const example = {
       device: {
         iosVersion: '99.1', locketVersion: '99.2', photoboothVisible: true,
-        entryPoint: 'Synthetic menu', nativeResultVisible: true, resultBehavior: 'Displays a test image',
+        entryPoint: 'Synthetic menu', frameSelected: true, captureCounts: [1, 4],
+        nativeResultVisible: true, resultBehavior: 'Displays a test image', nativePostSucceeded: true,
       },
       extension: {
         sourceType: 'authorized-fixture', source: 'Synthetic test data',
+        filterConfigSchema: 'Synthetic catalog schema', processing: 'remote',
+        processingEvidence: 'Synthetic remote compositor',
         allowsCustomHttpsOrigin: true, forwardsLocketCredentials: false,
       },
       endpoints: [{
@@ -56,6 +59,19 @@ test('the evidence checker distinguishes a complete synthetic form from unsafe o
     assert.equal(missing.status, 2);
     assert.match(missing.stdout, /chưa đạt.*header bắt buộc/);
     assert.doesNotMatch(missing.stdout, /Authorization/);
+
+    example.extension.processing = 'on-device';
+    example.extension.processingEvidence = 'Synthetic local compositor';
+    delete example.extension.allowsCustomHttpsOrigin;
+    delete example.endpoints;
+    await writeFile(file, JSON.stringify(example));
+    const local = check(file);
+    assert.equal(local.status, 0);
+    assert.doesNotMatch(local.stdout, /riêng|Endpoint/);
+
+    example.device.nativePostSucceeded = false;
+    await writeFile(file, JSON.stringify(example));
+    assert.match(check(file).stdout, /chưa đạt.*Đăng thành công/);
 
     await writeFile(file, 'not JSON');
     assert.equal(check(file).status, 1);

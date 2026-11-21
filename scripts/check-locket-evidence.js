@@ -38,12 +38,25 @@ function evidenceChecks(data) {
   const device = data.device;
   const extension = data.extension;
   const endpoints = Array.isArray(data.endpoints) ? data.endpoints : [];
-  return [
+  const supportedProcessing = ['on-device', 'remote'].includes(extension?.processing);
+  const captureCounts = device?.captureCounts;
+  const checks = [
     [hasText(device?.iosVersion) && hasText(device?.locketVersion), 'iPhone · Phiên bản iOS và Locket'],
     [device?.photoboothVisible === true && hasText(device?.entryPoint), 'iPhone · Mục Photobooth và thao tác mở'],
+    [device?.frameSelected === true && Array.isArray(captureCounts) && captureCounts.length > 0 &&
+      captureCounts.every((count) => Number.isSafeInteger(count) && count > 0),
+    'iPhone · Chọn khung và số ảnh đã chụp trong Camera → Filter'],
     [device?.nativeResultVisible === true && hasText(device?.resultBehavior), 'iPhone · Hành vi nhận và hiển thị ảnh trong ứng dụng'],
+    [device?.nativePostSucceeded === true, 'iPhone · Đăng thành công và thấy bài Photobooth trong Locket'],
     [['official-doc', 'authorized-fixture'].includes(extension?.sourceType) && hasText(extension.source),
       'Tích hợp · Tài liệu của Locket hoặc mẫu giao thức được phép dùng'],
+    [hasText(extension?.filterConfigSchema), 'Tích hợp · Schema cấu hình Filter mà client đã nạp'],
+    [supportedProcessing && hasText(extension?.processingEvidence),
+      'Tích hợp · Bằng chứng ghép ảnh trên thiết bị hoặc qua API'],
+  ];
+  if (extension?.processing !== 'remote') return checks;
+  return [
+    ...checks,
     [extension?.allowsCustomHttpsOrigin === true && extension?.forwardsLocketCredentials === false,
       'Tích hợp · Có cơ chế được phép đổi sang HTTPS riêng và không chuyển tiếp thông tin xác thực Locket'],
     [endpoints.some((endpoint) => endpoint?.purpose === 'compose' &&
@@ -64,7 +77,7 @@ try {
   }
   const missing = checks.filter(([present]) => !present).length;
   if (missing) {
-    console.log(`Còn ${missing}/${checks.length} tiêu chí cần bổ sung. Chưa đủ căn cứ tạo adapter.`);
+    console.log(`Còn ${missing}/${checks.length} tiêu chí cần bổ sung. Chưa đủ căn cứ xác nhận luồng Photobooth trong Locket.`);
     process.exitCode = 2;
   } else {
     console.log('Biểu mẫu đã đủ trường. Cần đối chiếu nguồn và chạy luồng thật trên iPhone để xác minh tương thích.');

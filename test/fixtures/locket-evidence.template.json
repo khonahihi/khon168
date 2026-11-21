@@ -4,12 +4,18 @@
     "locketVersion": null,
     "entryPoint": null,
     "photoboothVisible": null,
+    "frameSelected": null,
+    "captureCounts": null,
     "nativeResultVisible": null,
-    "resultBehavior": null
+    "resultBehavior": null,
+    "nativePostSucceeded": null
   },
   "extension": {
     "sourceType": null,
     "source": null,
+    "filterConfigSchema": null,
+    "processing": null,
+    "processingEvidence": null,
     "allowsCustomHttpsOrigin": null,
     "forwardsLocketCredentials": null
   },

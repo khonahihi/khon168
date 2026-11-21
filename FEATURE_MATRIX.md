@@ -2,7 +2,13 @@
 
 ## Nguồn đã đọc
 
-Nhánh `main` của [KHON168 trên GitHub](https://github.com/khonahihi/khon168/tree/cf85d6b237d9c4f69aded6df220131b62e75113a) tại commit `cf85d6b` gồm `locket.module`, `README.md` và ba tệp trong `js/`. ZIP chứa snapshot repository cùng hai tệp riêng `locketmphong.conf` và `locketmphong_v95.js`. Yêu cầu nhắc ba tệp tham chiếu. Tệp liên quan thứ ba trong ZIP là bản `js/forceGold.js`, cùng 238 khai báo `overlay_id` như GitHub và khác ở ghi công, nội dung giới thiệu và URL ảnh minh họa. Tên profile ghi 9.5, phần đầu script ghi 9.2.
+Nhánh `main` của KHON168 tại commit `cf85d6b` gồm `locket.module`, `README.md` và ba tệp trong `js/`. Hai tệp tham chiếu trong ZIP là `locketmphong.conf` và `locketmphong_v95.js`. Tên profile ghi 9.5, phần đầu script ghi 9.2. [Snapshot KHON168 trên GitHub](https://github.com/khonahihi/khon168/tree/cf85d6b237d9c4f69aded6df220131b62e75113a).
+
+Bản trích xuất chứa 75 caption trong 5 nhóm, 42 filter, 22 ID Photobooth, metadata overlay khung widget, tên tệp asset và vị trí các tên endpoint trong mã. Trình đọc dùng khai báo JSON tĩnh và cấu hình dạng văn bản. [Bản trích xuất](PHONG_REFERENCE.json).
+
+```powershell
+npm.cmd run inspect:phong -- .\locketmphong_v95.js .\locketmphong.conf PHONG_REFERENCE.json
+```
 
 | Tính năng | KHON168 gốc | Mã Phong | Backend và mức xác minh |
 | --- | --- | --- | --- |
@@ -20,9 +26,19 @@ Nhánh `main` của [KHON168 trên GitHub](https://github.com/khonahihi/khon168/
 
 `locket.module` gọi `js/forceGold.js` cho phản hồi Firebase Remote Config. Sau khi nhận diện User-Agent Locket, script dùng `Object.assign` để ghi các khóa vào `obj.entries`. `overlay_items` là chuỗi JSON chứa danh sách nhóm và item. `overlay_dynamic_captions` là chuỗi JSON liệt kê các kiểu caption theo dữ liệu ứng dụng, như thời tiết và nhạc. Cuối cùng script tuần tự hóa phản hồi qua `$done`.
 
-Cả hai bộ khai báo có `overlay_id`, `source`, `caption.type`, `caption.text`, `caption.icon`, `caption.background.colors` và `caption.text_color`. KHON168 đã có cấu trúc này. Dữ liệu, thứ tự, tiếng Việt, emoji, màu và bản địa hóa được giữ nguyên. Phong thêm số `sort_order`. KHON168 tiếp tục dùng thứ tự mảng vì chưa có bằng chứng client cần trường này. `source: "remote"` là metadata. Caption tĩnh đã có sẵn chữ, icon và màu trong từng mục. Các mảng màu mô tả gradient tĩnh. Các kiểu caption động cung cấp nội dung theo ngữ cảnh.
+Cả hai bộ khai báo có `overlay_id`, `source`, `caption.type`, `caption.text`, `caption.icon`, `caption.background.colors` và `caption.text_color`. Một số mục Phong có thêm `sort_order`. KHON168 dùng thứ tự mảng hiện có. Các mảng màu mô tả gradient tĩnh. Các kiểu caption động cung cấp nội dung theo ngữ cảnh.
+
+Module thử nghiệm chạy trực tiếp `js/forceGold.js` ở chiều phản hồi của Firebase fetch. Nhánh Photobooth chỉ xử lý POST thành công với `state: "UPDATE"`. Việc hợp nhất caption và việc cập nhật nhóm camera độc lập. Khi trùng `overlay_id`, bản đang có trong phản hồi được ưu tiên. [Mã SDK Firebase iOS](https://github.com/firebase/firebase-ios-sdk/blob/main/FirebaseRemoteConfig/Sources/RCNConfigFetch.m).
 
 ## Bằng chứng về Photobooth trong Locket
+
+### Đường đi của cấu hình Filter hiện có
+
+Bản gốc của `forceGold.js` thay toàn bộ `camera_filter_config` bằng sáu nhóm tĩnh. Trên nhánh tính năng, quy tắc cũ chỉ dùng sáu nhóm dự phòng khi phản hồi thiếu khóa này. Module thử nghiệm giữ nguyên trường thiếu hoặc sai dạng.
+
+Trong chế độ Photobooth, script chỉ thêm ID đang có trong `picker_filters` khi catalog của cùng phản hồi xác nhận `category` là Photobooth, `type` là `normal` và `overlay` là `true`. Script giữ thứ tự picker và các nhóm cũ. Cấu hình bị tắt hoặc có các danh sách song song mâu thuẫn được giữ nguyên. Cấu trúc này đã chạy với fixture cục bộ. Chưa có phản hồi từ iPhone cho thấy Locket cấp những bản ghi tương ứng cho KHON168.
+
+### Đối chiếu mã Phong
 
 1. **Kích hoạt.** `CUSTOM_CAMERA_FILTER_CONFIG` khai báo cờ hiển thị nút và bộ chọn. Bản script chỉ dùng hằng này để lấy danh sách ở nhánh `getFilters` / `createFilter`. Không có lệnh ghi nó vào Remote Config. Nhánh `changeProfileInfo` có thể ghi lựa chọn vào bộ nhớ Shadowrocket, nhưng trong script không có thao tác đọc khóa đó để gọi xử lý ảnh.
 2. **Dữ liệu khung.** Cả 22 mục thuộc nhóm Photobooth đều có `type` và `filterType` là `normal`. Chúng có cờ `overlay`, URL ảnh khung và metadata hiển thị. `outputUrl`, `productUrl` và `referenceImages` không có giá trị sử dụng ở các mục này. Catalog không có `photoCount`, `slots` hay `layout`. Tên ID gợi ý số ảnh ở một số mục, nhưng không mô tả cách client gửi từng ảnh.
@@ -39,4 +55,10 @@ Cả hai bộ khai báo có `overlay_id`, `source`, `caption.type`, `caption.tex
 
 Quy tắc Cloud Functions của profile chạy ở chiều request và không yêu cầu đọc body. Profile không đăng ký hook response riêng cho bốn endpoint ghép. Nhánh JS có thể bỏ trường lỗi và trả 200 với `Content-Type: application/json`. Điều đó không xác nhận xử lý thành công ở server. Catalog filter tham chiếu URL overlay và hình minh họa trên host của Phong. ZIP không có mã triển khai trên VPS, tệp ảnh khung gốc hoặc bản ghi request/response thực tế.
 
-Mức xác minh hiện có là cấu trúc dữ liệu Custom Captions của KHON168 qua kiểm thử cục bộ. Hiển thị caption, chọn ảnh đã xuất từ thư viện và tích hợp Photobooth trực tiếp cần thử trên phiên bản iOS và Locket cụ thể. Hiện chưa có hợp đồng đủ để xây adapter hoặc thêm quy tắc Shadowrocket. [Quy trình kiểm thử trên iPhone và biểu mẫu bằng chứng](LOCKET_IPHONE_TEST.md).
+Chưa xác định được Locket xử lý ảnh Photobooth trên thiết bị hay gọi API. Một danh sách filter có URL overlay chỉ xác nhận metadata có thể mô tả khung. Cần bằng chứng client chọn khung, chụp theo số ô, ghép ảnh và chuyển ảnh kết quả vào thao tác Đăng thông thường. Nếu có API xử lý, còn thiếu method, body, thứ tự ảnh, key Khung, status, MIME, schema thực tế của `generateFilteredImage` và cơ chế hỗ trợ endpoint riêng. API Sharp của KHON168 có hợp đồng riêng. `/health` ở địa chỉ Render được cung cấp trả HTTP 404 khi kiểm tra. [Kết quả kiểm thử](TEST_REPORT.md) · [Biểu mẫu bằng chứng iPhone](LOCKET_IPHONE_TEST.md).
+
+### Đối chiếu bốn ảnh do người dùng cung cấp
+
+Ảnh 1 có nhóm Photobooth, trong đó tên Ếch Xanh khớp `pb_ech_xanh`. Ảnh 3 có hàng chọn khung cạnh nút chụp. Ảnh 2 hiển thị “ĐANG RỬA ẢNH”. Ảnh 4 ở màn hình “Gửi đến…” có nhãn “Photobooth Trứng Bắc Thảo”, trùng tên của `pb_trung_bac_thao` trong catalog. Hai ô trên có ảnh và hai ô dưới còn chờ. Ảnh không cho biết số request, nơi lưu trạng thái giữa các lần chụp, hay kết quả sau khi bấm gửi. Không có mẫu payload thực tế đi cùng ảnh.
+
+Trong lịch sử KHON168, `15621af` có adapter cũ và `simulate_locket.js`. Tệp mô phỏng tự tạo ảnh và session. Tài liệu cùng commit ghi rõ các trường là phỏng đoán. Adapter đó không cung cấp giao thức đã xác minh.

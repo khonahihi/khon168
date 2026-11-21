@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { loadCatalog, PHOTO_COUNTS } from '../backend/catalog.js';
 
 const root = new URL('../', import.meta.url);
-for (const directory of ['backend/', 'web/', 'scripts/']) {
+for (const directory of ['backend/', 'js/', 'web/', 'scripts/']) {
   const location = new URL(directory, root);
   for (const name of await readdir(location)) {
     if (name.endsWith('.js')) {

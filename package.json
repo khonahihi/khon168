@@ -12,7 +12,8 @@
     "build": "node scripts/check-build.js",
     "test": "node --test",
     "test:api": "node scripts/smoke-api.js",
-    "evidence:locket": "node scripts/check-locket-evidence.js"
+    "evidence:locket": "node scripts/check-locket-evidence.js",
+    "inspect:phong": "node scripts/extract-phong-reference.js"
   },
   "dependencies": {
     "express": "^5.2.1",
