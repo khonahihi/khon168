@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1200" viewBox="0 0 1500 1200">
- <g fill="#E4DDF9" font-family="sans-serif">
- <rect x="82" y="96" width="1336" height="924" rx="35" fill="none" stroke="#A5A4CF" stroke-width="3"/>
- <path d="M82 165V96h69m1198 0h69v69M82 951v69h69m1198 0h69v-69M108 1113h388m508 0h388" fill="none" stroke="#E4DDF9" stroke-width="4"/>
- <path d="m750 35 8 18 18 8-18 8-8 18-8-18-18-8 18-8z" fill="#E4DDF9"/>
- <text x="750" y="1129" text-anchor="middle" font-size="36" letter-spacing="11">KHON168</text>
- </g>
-</svg>
