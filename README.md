@@ -37,7 +37,7 @@ Các nội dung chính của dự án:
 Sử dụng đường dẫn module chính thức của KHON168:
 
 ```text
-https://raw.githubusercontent.com/khonahihi/khon168/main/locket.module
+https://raw.githubusercontent.com/khonahihi/khon168/main/khon.module
 ```
 
 ### 3. Thêm Module vào Shadowrocket
