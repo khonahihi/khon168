@@ -1,6 +1,7 @@
 #!name=Khonahihi
 #!desc=Locket Gold (Custom Captions) + AI Filter + YouTube + Spotify Premium + SoundCloud Go+
-# Source: Duy Vinh & Khon
+# Source: Duy Vinh
+# Rewrite: Khon 
 # GitHub: https://github.com/khonahihi/khon168
 
 [General]
@@ -29,7 +30,7 @@ AND,((DOMAIN,youtubei.googleapis.com),(PROTOCOL,UDP)),REJECT
 
 [Script]
 # ==========================================
-# LOCKET GOLD + CUSTOM CAPTIONS
+# LOCKET GOLD 
 # ==========================================
 
 # Mở Gold RevenueCat
