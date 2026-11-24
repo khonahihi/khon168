@@ -1,6 +1,6 @@
 <div align="center">
 
-# 👑 KHON168
+# 👑 KHON
 
 **Xin chào, mình là Khon!**
 
@@ -103,7 +103,6 @@ Trân trọng ghi nhận và cảm ơn công sức đóng góp của các tác g
 
 <div align="center">
 
-**KHON168 – Locket Custom Module**  
 Made with 💛 by **Khon**
 
 </div>
