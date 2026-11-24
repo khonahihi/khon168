@@ -1,104 +1,109 @@
- <div align="center">
+<div align="center">
 
-# 👑 KHON
+# 👑 KHON168
 
 **Xin chào, mình là Khon!**
 
-Một dự án tùy chỉnh và mở rộng trải nghiệm Locket, được phát triển dựa trên nền tảng module của **NightmarketServer** và **Đinh Duy Vinh**.
+Dự án tùy chỉnh và mở rộng trải nghiệm **Locket Gold**, được kế thừa và viết lại dựa trên nền tảng module của **Đinh Duy Vinh** và **NightmarketServer**.
 
-Mình kế thừa cấu trúc từ mã nguồn gốc, đồng thời bổ sung các tùy chỉnh riêng nhằm mang đến nhiều lựa chọn caption và tính năng mở rộng cho người dùng.
+Dự án này tối ưu hóa cấu trúc mã nguồn gốc, bổ sung các tùy chỉnh cá nhân hóa , đồng thời tích hợp thêm các tiện ích giải trí YTB-Soundcloud-Sportify.
 
 [![GitHub](https://img.shields.io/badge/GitHub-KHON168-181717?style=for-the-badge&logo=github)](https://github.com/khonahihi/khon168)
+[![iOS](https://img.shields.io/badge/iOS-Shadowrocket-1C88E3?style=for-the-badge&logo=apple&logoColor=white)](https://apps.apple.com/app/shadowrocket/id932747118)
+[![License](https://img.shields.io/badge/License-Personal_Use-orange?style=for-the-badge)](#-tuyên-bố-miễn-trừ-trách-nhiệm)
 
 </div>
 
-## ✨ Giới thiệu
+---
 
-Đây là dự án cá nhân tập trung vào việc tùy chỉnh module Locket, mở rộng nội dung hiển thị và thử nghiệm các tính năng bổ sung.
+## ✨ Giới thiệu & Tính năng
 
-Các nội dung chính của dự án:
+Dự án tập trung vào việc tùy biến module Locket cho ứng dụng Shadowrocket trên iOS:
 
-- 🎨 **Custom Captions:** Bộ sưu tập caption được tùy chỉnh với nhiều phong cách và màu sắc.
-- 📸 **Photobooth:** Hỗ trợ trải nghiệm chụp ảnh Photobooth.
-- 🧩 **Module Extensions:** Mở rộng và tùy chỉnh các thành phần của module.
-- 🚀 **Experimental Features:** Thử nghiệm các tính năng mới nhằm mở rộng trải nghiệm Locket.
+- 🎨 **Custom Captions (Độc quyền):** Bộ nhãn dán, caption trang trí đa màu sắc, phong cách do chính mình tuyển chọn và thiết kế riêng trong mục `🎨 Decorative by Khon`.
+- 👑 **Locket Gold Unlocked:** Mở khóa các đặc quyền Gold (huy hiệu profile, tải ảnh thư viện, không quảng cáo, quay video dài hơn, kết bạn không giới hạn,...).
+- 📸 **Photobooth & AI Filter:** Tích hợp bộ chuyển tiếp xử lý bộ lọc ảnh AI Photobooth.
+- 🧩 **All-in-One Media (Tích hợp thêm):**
+  - 🛑 Chặn quảng cáo **YouTube**
+  - 🎵 Mở rộng tiện ích **Spotify Premium** & **SoundCloud Go+**
+
+---
 
 ## 🚀 Hướng dẫn cài đặt
 
-### 1. Yêu cầu chuẩn bị
+### 1. Chuẩn bị
 
-- Thiết bị iPhone sử dụng iOS.
-- Ứng dụng Locket.
-- Ứng dụng Shadowrocket.
-- Kết nối Internet ổn định.
+- Thiết bị iPhone / iPad chạy iOS.
+- Ứng dụng **Shadowrocket** (đã cài đặt).
+- Ứng dụng **Locket Widget**.
 
-### 2. Sao chép URL Module
+### 2. URL Module chính thức
 
-Sử dụng đường dẫn module chính thức của KHON168:
+Sao chép liên kết module:
 
 ```text
 https://raw.githubusercontent.com/khonahihi/khon168/main/khon.module
 ```
 
-### 3. Thêm Module vào Shadowrocket
+### 3. Các bước thêm vào Shadowrocket
 
-1. Mở ứng dụng Shadowrocket.
-2. Thêm URL module KHON168 vào cấu hình.
-3. Lưu và kích hoạt module.
-4. Thiết lập chứng chỉ CA của Shadowrocket theo hướng dẫn của ứng dụng, sau đó cài đặt và bật tin cậy chứng chỉ trong iOS nếu cần.
-5. Đóng Locket và khởi động lại Shadowrocket.
-6. Bật kết nối VPN trong Shadowrocket.
-7. Mở lại Locket và đăng nhập nếu cần.
-8. Chờ ứng dụng tải dữ liệu và kiểm tra các tính năng đã được kích hoạt.
+1. **Thêm Module:**
+   - Mở ứng dụng **Shadowrocket** -> Chọn tab **Cấu hình (Config)**.
+   - Kéo xuống phần **Modules** -> Nhấn dấu **`+`** ở góc trên.
+   - Dán URL module ở trên vào và bấm **Lưu / Download**.
+   - Chạm vào module vừa thêm để kích hoạt (hiển thị dấu tích màu cam).
 
-> **Lưu ý:** Quy trình có thể khác nhau tùy phiên bản iOS, Shadowrocket và Locket. Không nên xóa dữ liệu hoặc gỡ ứng dụng khi chưa sao lưu thông tin đăng nhập cần thiết.
+2. **Cài đặt & Bật chứng chỉ HTTPS (Bắt buộc):**
+   - Trong Shadowrocket, chạm vào file config đang sử dụng (icon chữ `(i)`) -> Chọn **Giải mã HTTPS (HTTPS Decryption)** -> Bật gạt.
+   - Chọn **Tạo chứng chỉ mới (Generate New CA)** -> **Cài đặt chứng chỉ vào hệ thống**.
+   - Mở **Cài đặt (Settings)** của iPhone -> **Cài đặt chung** -> **Giới thiệu** -> Kéo xuống dưới cùng chọn **Cài đặt tin cậy chứng nhận** -> Gạt **BẬT** tin cậy chứng chỉ Shadowrocket.
 
-## 🛠️ Định hướng phát triển
+3. **Áp dụng:**
+   - Quay lại Shadowrocket và bật công tắc **Kết nối VPN**.
+   - Vuốt tắt hoàn toàn ứng dụng Locket trong màn hình đa nhiệm (App Switcher) rồi mở lại để tải cấu hình mới.
 
-Mình sẽ tiếp tục cập nhật và mở rộng với các tính năng dự kiến:
-
-| Tính năng | Định hướng |
-|---|---|
-| 🎨 Custom Captions | Bổ sung caption và phong cách mới |
-| 📸 Photobooth | Phát triển trải nghiệm chụp ảnh |
-| 👥 Custom Groups | Tùy chỉnh và tạo nhóm |
-| 🔥 Trending Captions | Cập nhật caption thịnh hành |
-| 🗳️ Voting | Thử nghiệm bình chọn caption |
-| 📤 Photo Upload | Mở rộng khả năng tải ảnh |
-| 🎥 Video 30s | Thử nghiệm quay video tối đa 30 giây |
-| 🎵 Audio | Thử nghiệm tính năng âm thanh |
-| 🤖 AI Filters | Chưa khả dụng, cần dịch vụ máy chủ tương thích |
-
-Các tính năng trên có thể thay đổi trong quá trình phát triển. Không phải tất cả đều đã hoạt động trong phiên bản hiện tại.
-
-## ⚠️ Tuyên bố miễn trừ trách nhiệm
-
-- KHON168 là dự án cá nhân phục vụ mục đích nghiên cứu, học tập và tùy chỉnh.
-- Đây không phải sản phẩm chính thức của Locket.
-- Dự án không liên kết, không được tài trợ hoặc chứng thực bởi Locket, RevenueCat hay Firebase.
-- Các tính năng có thể hoạt động khác nhau tùy phiên bản ứng dụng, thiết bị và cấu hình.
-- Việc chỉnh sửa hoặc mô phỏng phản hồi phía thiết bị không đồng nghĩa với việc thay đổi quyền truy cập, trạng thái thuê bao hoặc dữ liệu thực tế trên máy chủ.
-- Người dùng tự chịu trách nhiệm khi cài đặt và sử dụng cấu hình tùy chỉnh.
-
-## 💛 Credits
-
-Xin gửi lời cảm ơn đến:
-
-- **NightmarketServer** – Original Module & Scripts.
-- **Đinh Duy Vinh** – Contributions & Customizations.
-
-Trân trọng ghi nhận công sức của những người đã đóng góp vào nền tảng ban đầu.
-
-## 🔗 Project
-
-<div align="center">
-
-**KHON168 – Locket Custom Module**
-
-[GitHub Repository](https://github.com/khonahihi/khon168)
+> [!TIP]
+> Nếu mở Locket chưa thấy caption mới, hãy chuyển mạng (giữa Wi-Fi và 4G) hoặc bật tắt lại kết nối VPN một lần để ứng dụng nhận dữ liệu Remote Config mới.
 
 ---
 
+## 🛠️ Định hướng phát triển
+
+| Tính năng | Trạng thái / Định hướng |
+|---|---|
+| 🎨 Custom Captions | Tiếp tục cập nhật thêm phong cách và biểu tượng mới |
+| 📸 Photobooth AI | Duy trì cầu nối máy chủ xử lý AI |
+| 👥 Custom Groups | Nghiên cứu tùy biến phân nhóm bạn bè |
+| 🔥 Trending Badges | Bổ sung các huy hiệu theo sự kiện / xu hướng |
+| 📤 Photo & Video 30s | Tối ưu độ ổn định khi tải ảnh/quay video dài |
+
+---
+
+## ⚠️ Tuyên bố miễn trừ trách nhiệm
+
+- Đây là dự án cá nhân không buôn bán, phi thương mại, phục vụ mục đích học tập, nghiên cứu và tùy biến trải nghiệm cá nhân.
+- Dự án không thuộc sở hữu, không liên kết và không được chứng thực bởi Locket, RevenueCat hay Google Firebase.
+- Không sử dụng cấu hình này cho bất kỳ mục đích thương mại hay mua bán dịch vụ.
+- Người dùng tự chịu trách nhiệm đối với thiết bị và tài khoản của mình khi sử dụng cấu hình tùy chỉnh.
+
+---
+
+## 💛 Nguồn & Lời cảm ơn (Credits)
+
+Dự án được xây dựng dựa trên nền tảng mã nguồn và đóng góp giá trị từ các tác giả:
+
+- **Đinh Duy Vinh (@duyvinh09)** – Tác giả nền tảng script Locket Gold, AI Filter Bridge, cấu hình Remote Config và các script đa phương tiện.  
+  🔗 **Git nguồn:** [https://github.com/duyvinh09/Module_IOS](https://github.com/duyvinh09/Module_IOS)
+- **NightmarketServer** – Tham khảo cấu trúc module Shadowrocket và cộng đồng hỗ trợ.  
+  🔗 **Git tham khảo:** [https://github.com/NightmarketServer/Module-Shadowrocket-NMS](https://github.com/NightmarketServer/Module-Shadowrocket-NMS)
+
+Trân trọng ghi nhận và cảm ơn công sức đóng góp của các tác giả!
+
+---
+
+<div align="center">
+
+**KHON168 – Locket Custom Module**  
 Made with 💛 by **Khon**
 
 </div>

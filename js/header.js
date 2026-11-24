@@ -1,8 +1,17 @@
 /***********************************************
-> deleteHeader by NightmarketServer - rewrite by Khon
-***********************************************/
+> deleteHeader author:duyvinh09 - rewrite: Khon
+***********************************************/	
+if (typeof $request === "undefined" || !$request || !$request.headers) {
+    $done({});
+}
 
-const version = 'V1.0.2';
+const headersToStrip = new Set(["x-revenuecat-etag", "if-none-match", "if-modified-since", "x-goog-if-none-match"]);
+let modifiedHeaders = { ...$request.headers };
 
+for (let key in modifiedHeaders) {
+    if (headersToStrip.has(key.toLowerCase())) {
+        delete modifiedHeaders[key];
+    }
+}
 
-function setHeaderValue(e,a,d){var r=a.toLowerCase();r in e?e[r]=d:e[a]=d}var modifiedHeaders=$request.headers;setHeaderValue(modifiedHeaders,"X-RevenueCat-ETag",""),$done({headers:modifiedHeaders});
+$done({ headers: modifiedHeaders });

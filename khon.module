@@ -1,20 +1,26 @@
-
-#!name=KHON168 All-in-One
-#!desc=Locket Gold + Custom Captions + YouTube + Spotify Premium + SoundCloud Go+
-# Source:  Duy Vinh
-# Customized by: Khon
+#!name=Khonahihi
+#!desc=Locket Gold (Custom Captions) + AI Filter + YouTube + Spotify Premium + SoundCloud Go+
+# Source: Duy Vinh & Khon
 # GitHub: https://github.com/khonahihi/khon168
 
 [General]
 user-agent = Locket/1.0.0 (iPhone; iOS 26.3; Scale/3.00)
 
 [Rule]
-# YouTube UDP Blocking
+# 1. Chặn UDP 443 của Locket (Bắt buộc để Shadowrocket bắt được MITM)
+AND,((DOMAIN,api.locketcamera.com),(PROTOCOL,UDP),(DEST-PORT,443)),REJECT
+AND,((DOMAIN,us-central1-locket-4252a.cloudfunctions.net),(PROTOCOL,UDP),(DEST-PORT,443)),REJECT
+AND,((DOMAIN,firebaseremoteconfig.googleapis.com),(PROTOCOL,UDP),(DEST-PORT,443)),REJECT
+
+# 2. Chặn UDP của YouTube
 AND,((DOMAIN-SUFFIX,googlevideo.com),(PROTOCOL,UDP)),REJECT
 AND,((DOMAIN,youtubei.googleapis.com),(PROTOCOL,UDP)),REJECT
 
 [URL Rewrite]
-# YouTube Ad Blocking
+# Chuyển hướng AI Filter sang server xử lý
+^https:\/\/api\.locketcamera\.com\/generateFilteredImage 'https://locket.dinhduyvinh.tech/generateFilteredImage' 307
+
+# Chặn quảng cáo YouTube
 ^https?:\/\/[\w-]+\.googlevideo\.com\/(?!(dclk_video_ads|videoplayback\?)).+&oad _ reject-200
 ^https?:\/\/(www|s)\.youtube\.com\/api\/stats\/ads _ reject-200
 ^https?:\/\/(www|s)\.youtube\.com\/(pagead|ptracking) _ reject-200
@@ -23,23 +29,25 @@ AND,((DOMAIN,youtubei.googleapis.com),(PROTOCOL,UDP)),REJECT
 
 [Script]
 # ==========================================
-# KHON168 - LOCKET GOLD + CUSTOM CAPTIONS
+# LOCKET GOLD + CUSTOM CAPTIONS
 # ==========================================
 
-# RevenueCat Response
+# Mở Gold RevenueCat
 revenuecat = type=http-response,pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$),script-path=https://raw.githubusercontent.com/khonahihi/khon168/main/js/locketfix.js,requires-body=true,max-size=-1,timeout=60
 
-# RevenueCat Request Header
-deleteHeader = type=http-request,pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts|subscribers),script-path=https://raw.githubusercontent.com/khonahihi/khon168/main/js/header.js,timeout=60
+# Xóa header cache chống lỗi 304
+deleteHeader = type=http-request,pattern=^https:\/\/(api\.revenuecat\.com|firebaseremoteconfig\.googleapis\.com)\/.+,script-path=https://raw.githubusercontent.com/khonahihi/khon168/main/js/header.js,timeout=60
 
-# Locket Firebase Remote Config + Custom Captions
-locket_rc = type=http-response,pattern=^https:\/\/firebaseremoteconfig\.googleapis\.com\/v1\/projects\/locket-4252a\/.+,script-path=https://raw.githubusercontent.com/khonahihi/khon168/main/js/forceGold.js,requires-body=true,max-size=-1,timeout=60
+# Mở tính năng + Custom Captions của Khon
+locket_rc = type=http-response,pattern=^https:\/\/firebaseremoteconfig\.googleapis\.com\/.+,script-path=https://raw.githubusercontent.com/khonahihi/khon168/main/js/forceGold.js,requires-body=true,max-size=-1,timeout=60
+
+# Xử lý chụp ảnh Photobooth / AI Filter
+locket_filters = type=http-request,pattern=^https:\/\/(api\.locketcamera\.com|us-central1-locket-4252a\.cloudfunctions\.net)\/(?:[^?#]*\/)?generateFilteredImage(?:\?.*)?$,script-path=https://locket.dinhduyvinh.tech/js/Locket_Filters.js,requires-body=true,max-size=-1,timeout=120
 
 
 # ==========================================
 # YOUTUBE - DUY VINH
 # ==========================================
-
 youtube.request = type=http-request,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|reel\/reel_watch_sequence|get_watch),requires-body=1,max-size=-1,binary-body-mode=1,engine=jsc,script-path=https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/js/youtube.response.js
 
 youtube.response = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/(youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch))(\?(.*))?$,requires-body=1,max-size=-1,binary-body-mode=1,engine={{{script}}},script-path=https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/js/youtube.response.js,argument="{"lyricLang":"vi","captionLang":"vi","blockUpload":true,"blockImmersive":true,"debug":false}"
@@ -48,7 +56,6 @@ youtube.response = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.c
 # ==========================================
 # SPOTIFY PREMIUM - DUY VINH
 # ==========================================
-
 spotify-json = type=http-request,pattern=^https:\/\/(spclient\.wg\.spotify\.com|.*-spclient\.spotify\.com(:443)?)\/(artistview\/v1\/artist|album-entity-view\/v2\/album)\/,requires-body=0,script-path=https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/js/spotify-json.js
 
 spotify-proto = type=http-response,pattern=^https:\/\/(spclient\.wg\.spotify\.com|.*-spclient\.spotify\.com(:443)?)\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)$,requires-body=1,binary-body-mode=1,max-size=0,script-path=https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/js/spotify-proto.js,script-update-interval=0
@@ -57,7 +64,6 @@ spotify-proto = type=http-response,pattern=^https:\/\/(spclient\.wg\.spotify\.co
 # ==========================================
 # SOUNDCLOUD GO+ - DUY VINH
 # ==========================================
-
 SoundCloudGoPlus = type=http-response,pattern=https://api-mobile.soundcloud.com/configuration/ios,requires-body=1,script-path=https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/js/SoundCloudGoPlus.js
 
 
@@ -67,4 +73,4 @@ http-request ^https:\/\/(spclient\.wg\.spotify\.com|.*-spclient\.spotify\.com(:4
 
 
 [MITM]
-hostname = %APPEND%, api.revenuecat.com, firebaseremoteconfig.googleapis.com, *.googlevideo.com, youtubei.googleapis.com, www.youtube.com, s.youtube.com, -redirector*.googlevideo.com, spclient.wg.spotify.com, *spclient.spotify.com, api-mobile.soundcloud.com
+hostname = %APPEND% api.revenuecat.com, firebaseremoteconfig.googleapis.com, api.locketcamera.com, *.googlevideo.com, youtubei.googleapis.com, www.youtube.com, s.youtube.com, -redirector*.googlevideo.com, spclient.wg.spotify.com, *spclient.spotify.com, api-mobile.soundcloud.com
